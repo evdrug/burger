@@ -1,0 +1,436 @@
+@font-face {
+    font-family: Gagalin;
+    src: url('../fonts/Gagalin/Gagalin-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Lifehack;
+    src: url('../fonts/Lifehack/Lifehack Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url('../fonts/Ubuntu/bold/Ubuntu-B.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url('../fonts/Ubuntu/light') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url('../fonts/Ubuntu/medium/Ubuntu-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url('../fonts/Ubuntu/regular') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html { 
+    /* overflow-y: hidden;  */
+}
+
+.box-one {
+    width: 100%;
+    min-height: 650px;
+    height: 100vh;
+    background-color: #010101;
+    background-image: url(../img/content/video-bg.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+ .box-one:before {
+    content: "";
+    background-image: url(../img/content/texture.png);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+} 
+
+.box-one__header {
+    padding-top: 12px;
+    padding-left: 77px;
+    padding-right: 80px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+
+/* 
+    border: 1px solid white; */
+}
+
+.logo {
+    width: 92px;
+    height: 69px;
+    background-image: url(../img/icons/logo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    margin-top: -3px;
+}
+
+.menu-nav {
+    z-index: 10;
+    display: flex;
+    color: white
+    
+}
+
+.menu-nav__item {
+    padding-right: 30px;
+    padding-left: 5px;
+}
+
+.menu-nav__link {
+    color: #ffffff;
+    font-family: Ubuntu;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu-nav__item:first-child{
+    list-style: none;
+}
+
+.menu-nav__item:last-child {
+    padding-right: 15px;
+}
+.menu__order {
+    padding: 10px 16px 11px 15px;
+    border-radius: 5px;
+    background-color: #e45028;
+    z-index: 1;
+}
+
+.menu__order:hover {
+    background-color: #c1401e;
+}
+
+.points {
+    position: fixed;
+    width: 16px;
+    display: flex;
+    top: 13.8%;
+    right: 4.5%;
+    justify-content: center;
+    align-items: center;
+     z-index: 10; 
+}
+
+.points__list {
+    list-style: none;
+}
+
+.points__item {
+    padding: 6px 8px 9px;
+}
+
+.points__item:last-child {
+    padding-bottom: none;
+}
+
+.point__link {
+    display: block;
+    background-color: white;
+    width: 6px;
+    height: 6px;
+    border-radius: 50% ;
+    position: relative;
+}
+
+.point__link_active:before {
+    content: "";
+    display: block;
+    border: 1px solid white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50% ;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    cursor: default;
+}
+
+.point__link:hover:before {
+    content: "";
+    display: block;
+    border: 1px solid white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50% ;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+}
+
+.content {
+    display: flex;
+    margin-left: -40px;      
+    justify-content: center;
+    align-items: center;
+     height: 63%; 
+}
+
+ .content__img-bg{
+    width: 452px;
+    background-image: url(../img/content/drops.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0 36%;
+    margin-right: 13px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.content__img {
+    height: 100%;
+      /* margin-top: -66px;   */
+}
+
+ 
+
+.content__text {
+    width: 405px;
+      padding-top: 68px;  
+
+
+}
+
+.content__text-header {
+    color: #f9b43b;
+    font-family: Gagalin;
+    font-size: 72px;
+     padding-bottom: 20px; 
+
+}
+
+.content__text-body {
+    color: #ffffff;
+    font-family: Lifehack;
+    font-size: 63px;
+    font-weight: 500;
+       line-height: 61px;   
+}
+
+.box-one__next {
+    width: 15px;
+    height: 15px;
+    border-bottom-left-radius: 3px; 
+    border: 2px solid #f3f3f3;
+    border-top: none;
+    border-right: none;
+    transform: rotate( -45deg );
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    margin-left: -7px;
+
+}
+
+
+
+.box-best {
+    width: 100%;
+    min-height: 650px;
+    height: 100vh;
+    background-color: #f5f2ed;
+    background-image: url(../img/content/wood-texture.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: -10;
+}
+
+.best-bg__cheese {
+    min-width: 300px;
+    min-height: 300px;
+    background-image: url(../img/content/cheese.png);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    position: absolute;
+    left: -144px;
+    top: 23px;
+    z-index: -1;
+}
+
+.best-bg__products {
+    min-width: 100px;
+    min-height: 100px;
+    background-image: url(../img/content/products.png);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    position: absolute;
+    top: 188px;
+    left: -42px;
+    z-index: -2;
+}
+
+.best-bg__tomato {
+    min-width: 427px;
+    min-height: 392px;
+    background-image: url(../img/content/tomato.png);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    position: absolute;
+    bottom: -260px;
+    left: 73px;
+    transform: rotate( 27deg ); 
+    z-index: 0;
+}
+
+.best-bg__lettuce {
+    min-width: 517px;
+    min-height: 399px;
+    background-image: url(../img/content/lettuce.png);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    position: absolute;
+    z-index: 0;
+    right: -353px;
+    top: 33px;
+    transform: rotate( 27deg );
+    z-index: -1; 
+}
+
+.best-bg__tomato2 {
+    min-width: 263px;
+    min-height: 267px;
+    background-image: url(../img/content/tomato2.png);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    position: absolute;
+    bottom: -125px;
+    right: -70px;
+    z-index: 0;
+}
+
+.best-bg__cheese2 {
+     min-width: 581px;
+    min-height: 581px; 
+    background-image: url(../img/content/cheese2.png);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    position: absolute;
+    bottom: -285px;
+    right: -62px;
+     z-index: -1; 
+
+}
+
+.box-best__title {
+    color: #2f3234;
+    font-family: Gagalin;
+    font-size: 72px;
+    font-weight: 400;
+    height: 31%; 
+    display: flex;  
+    align-items: center;
+}
+
+.box-best__list {
+    display: flex;
+    height: 45%;
+}
+
+.box-best__item {
+    /* border: 1px solid red; */
+    min-width: 286px; 
+    max-width: 286px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;    
+    margin-right: 35px;
+    text-align: center;
+    padding-top: 17px;
+    z-index: 1;
+
+}
+
+.box-best__item:last-child {
+    margin-right: 0;
+}
+
+.best-item__logo {
+    min-width: 97px;
+    min-height: 89px;
+    margin-bottom: 32px;
+}
+
+.best-img__meat {
+    background-image: url(../img/icons/meat.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.best-img__hand {
+    background-image: url(../img/icons/hand.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.best-img__natural {
+    background-image: url(../img/icons/natural.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.best-item__title {
+    display: inline-flex;
+    color: #2f3234;
+    font-family: Lifehack;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 13px;
+}
+
+.best-item__body {
+    display: inline-flex;
+    opacity: 0.8;
+    color: #2f3234;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+}
