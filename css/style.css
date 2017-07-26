@@ -21,7 +21,7 @@
 
 @font-face {
     font-family: Ubuntu;
-    src: url('../fonts/Ubuntu/light') format('woff');
+    src: url('../fonts/Ubuntu/light/Ubuntu-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
@@ -35,7 +35,7 @@
 
 @font-face {
     font-family: Ubuntu;
-    src: url('../fonts/Ubuntu/regular') format('woff');
+    src: url('../fonts/Ubuntu/regular/Ubuntu-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
@@ -347,7 +347,7 @@ html {
 }
 
 .best-bg__cheese2 {
-     min-width: 581px;
+    min-width: 581px;
     min-height: 581px; 
     background-image: url(../img/content/cheese2.png);
     background-repeat: no-repeat;
@@ -434,3 +434,86 @@ html {
     font-weight: 300;
     line-height: 24px;
 }
+
+.box-reviews {
+    /* margin-top: 10px; */
+    width: 100%; 
+    min-height: 650px; 
+    height: 100vh;  
+}
+
+.box-reviews__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start;
+}
+
+.box-reviews__item {
+    width: 25%;
+    height: 50vh; 
+    min-width: 275px; 
+    min-height: 325px; 
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.reviews-item {
+    display: flex;   
+    position: absolute;
+    top: 0;
+    left: 0; 
+    flex-flow: column; 
+    align-items: flex-start; 
+    /* justify-content: center;  */
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 33px;
+    height: 100%;
+    padding-top: 47px;
+    filter: blur(100px);  
+}
+
+.reviews-item:hover {
+     filter: blur(0); 
+    background-color: rgba(0,0,0,.4);
+}
+
+.box-reviews__photo {
+      height: 100%;  
+      width: 100%; 
+    /* max-height: 100%; */
+}
+
+ .reviews-item__name {
+    font-family: Gagalin;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.reviews-item__comment {
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+.reviews-item__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: Ubuntu;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 11px 15px 11px;
+    border-radius: 5px;
+    background-color: #2f3234;
+}
+
+.reviews-item__link:hover {
+    background-color: #1f2122;
+} 
