@@ -46,12 +46,13 @@
     box-sizing: border-box
 }
 
-html { 
+html, body {
+
     /* overflow-y: hidden;  */
 }
 
 .box-one {
-    width: 100%;
+    max-width: 100%;
     min-height: 650px;
     height: 100vh;
     background-color: #010101;
@@ -62,30 +63,30 @@ html {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    overflow: hidden;
 }
 
- .box-one:before {
+.box-one:before {
     content: "";
+    display: block;
     background-image: url(../img/content/texture.png);
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 0;
-} 
+    z-index: -10;
+}
 
 .box-one__header {
+    width: 100%;
     padding-top: 12px;
     padding-left: 77px;
     padding-right: 80px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-
-
-/* 
-    border: 1px solid white; */
 }
 
 .logo {
@@ -106,7 +107,7 @@ html {
     z-index: 10;
     display: flex;
     color: white
-    
+
 }
 
 .menu-nav__item {
@@ -123,13 +124,14 @@ html {
     text-decoration: none;
 }
 
-.menu-nav__item:first-child{
+.menu-nav__item:first-child {
     list-style: none;
 }
 
 .menu-nav__item:last-child {
     padding-right: 15px;
 }
+
 .menu__order {
     padding: 10px 16px 11px 15px;
     border-radius: 5px;
@@ -145,11 +147,11 @@ html {
     position: fixed;
     width: 16px;
     display: flex;
-    top: 13.8%;
+    top: 13.7%;
     right: 4.5%;
     justify-content: center;
     align-items: center;
-     z-index: 10; 
+    z-index: 10;
 }
 
 .points__list {
@@ -161,7 +163,7 @@ html {
 }
 
 .points__item:last-child {
-    padding-bottom: none;
+    padding-bottom: 0;
 }
 
 .point__link {
@@ -169,7 +171,7 @@ html {
     background-color: white;
     width: 6px;
     height: 6px;
-    border-radius: 50% ;
+    border-radius: 50%;
     position: relative;
 }
 
@@ -179,7 +181,7 @@ html {
     border: 1px solid white;
     width: 16px;
     height: 16px;
-    border-radius: 50% ;
+    border-radius: 50%;
     position: absolute;
     top: -6px;
     left: -6px;
@@ -192,7 +194,7 @@ html {
     border: 1px solid white;
     width: 16px;
     height: 16px;
-    border-radius: 50% ;
+    border-radius: 50%;
     position: absolute;
     top: -6px;
     left: -6px;
@@ -200,35 +202,30 @@ html {
 
 .content {
     display: flex;
-    margin-left: -40px;      
     justify-content: center;
     align-items: center;
-     height: 63%; 
+    height: 63%;
+    max-width: 940px;
+    margin-left: -40px;
 }
 
- .content__img-bg{
-    width: 452px;
-    background-image: url(../img/content/drops.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 0 36%;
+.content__img-bg {
+    width: 451px;
+    height: 420px;
     margin-right: 13px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 
 }
 
 .content__img {
     height: 100%;
-      /* margin-top: -66px;   */
-}
 
- 
+}
 
 .content__text {
     width: 405px;
-      padding-top: 68px;  
-
+    padding-top: 68px;
 
 }
 
@@ -236,8 +233,8 @@ html {
     color: #f9b43b;
     font-family: Gagalin;
     font-size: 72px;
-     padding-bottom: 20px; 
-
+    font-weight: 400;
+    padding-bottom: 20px;
 }
 
 .content__text-body {
@@ -245,25 +242,23 @@ html {
     font-family: Lifehack;
     font-size: 63px;
     font-weight: 500;
-       line-height: 61px;   
+    line-height: 61px;
 }
 
 .box-one__next {
     width: 15px;
     height: 15px;
-    border-bottom-left-radius: 3px; 
+    border-bottom-left-radius: 3px;
     border: 2px solid #f3f3f3;
     border-top: none;
     border-right: none;
-    transform: rotate( -45deg );
+    transform: rotate(-45deg);
     position: absolute;
     bottom: 7%;
     left: 50%;
     margin-left: -7px;
 
 }
-
-
 
 .box-best {
     width: 100%;
@@ -288,7 +283,7 @@ html {
     min-height: 300px;
     background-image: url(../img/content/cheese.png);
     background-repeat: no-repeat;
-    background-size: cover;  
+    background-size: cover;
     position: absolute;
     left: -144px;
     top: 23px;
@@ -300,7 +295,7 @@ html {
     min-height: 100px;
     background-image: url(../img/content/products.png);
     background-repeat: no-repeat;
-    background-size: cover;  
+    background-size: cover;
     position: absolute;
     top: 188px;
     left: -42px;
@@ -312,11 +307,11 @@ html {
     min-height: 392px;
     background-image: url(../img/content/tomato.png);
     background-repeat: no-repeat;
-    background-size: cover;  
+    background-size: cover;
     position: absolute;
     bottom: -260px;
     left: 73px;
-    transform: rotate( 27deg ); 
+    transform: rotate(27deg);
     z-index: 0;
 }
 
@@ -325,13 +320,13 @@ html {
     min-height: 399px;
     background-image: url(../img/content/lettuce.png);
     background-repeat: no-repeat;
-    background-size: cover;  
+    background-size: cover;
     position: absolute;
     z-index: 0;
     right: -353px;
     top: 33px;
-    transform: rotate( 27deg );
-    z-index: -1; 
+    transform: rotate(27deg);
+    z-index: -1;
 }
 
 .best-bg__tomato2 {
@@ -339,7 +334,7 @@ html {
     min-height: 267px;
     background-image: url(../img/content/tomato2.png);
     background-repeat: no-repeat;
-    background-size: cover;  
+    background-size: cover;
     position: absolute;
     bottom: -125px;
     right: -70px;
@@ -348,14 +343,14 @@ html {
 
 .best-bg__cheese2 {
     min-width: 581px;
-    min-height: 581px; 
+    min-height: 581px;
     background-image: url(../img/content/cheese2.png);
     background-repeat: no-repeat;
-    background-size: cover;  
+    background-size: cover;
     position: absolute;
     bottom: -285px;
     right: -62px;
-     z-index: -1; 
+    z-index: -1;
 
 }
 
@@ -364,24 +359,26 @@ html {
     font-family: Gagalin;
     font-size: 72px;
     font-weight: 400;
-    height: 31%; 
-    display: flex;  
+    height: 31%;
+    display: flex;
     align-items: center;
 }
 
 .box-best__list {
     display: flex;
     height: 45%;
+    width: 945px;
 }
 
 .box-best__item {
     /* border: 1px solid red; */
-    min-width: 286px; 
-    max-width: 286px;
+    /*min-width: 286px; */
+    /*max-width: 286px;*/
+    max-width: 33.2%;
     display: flex;
     flex-flow: column;
-    align-items: center;    
-    margin-right: 35px;
+    align-items: center;
+    padding-right: 2px;
     text-align: center;
     padding-top: 17px;
     z-index: 1;
@@ -437,57 +434,95 @@ html {
 
 .box-reviews {
     /* margin-top: 10px; */
-    width: 100%; 
-    min-height: 650px; 
-    height: 100vh;  
+    width: 100%;
+    min-height: 650px;
+    height: 100vh;
 }
 
 .box-reviews__list {
+    width: 100%;
     list-style: none;
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: flex-start;
 }
 
 .box-reviews__item {
     width: 25%;
-    height: 50vh; 
-    min-width: 275px; 
-    min-height: 325px; 
+    height: 50vh;
+    /*min-width: 275px;*/
+    /*min-height: 325px;*/
     overflow: hidden;
     position: relative;
 }
 
-
-
 .reviews-item {
-    display: flex;   
+    display: flex;
     position: absolute;
     top: 0;
-    left: 0; 
-    flex-flow: column; 
-    align-items: flex-start; 
-    /* justify-content: center;  */
+    left: 0;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
     color: #fff;
     padding-left: 20px;
     padding-right: 33px;
     height: 100%;
-    padding-top: 47px;
-    filter: blur(100px);  
+    padding-top: 20px;
+    padding-bottom: 20px;
+    filter: blur(100px);
+    transition: .4s;
 }
 
 .reviews-item:hover {
-     filter: blur(0); 
-    background-color: rgba(0,0,0,.4);
+    filter: blur(0);
+    min-width: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    transition: .4s;
 }
 
 .box-reviews__photo {
-      height: 100%;  
-      width: 100%; 
-    /* max-height: 100%; */
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
 }
 
- .reviews-item__name {
+.photo1 {
+    background-image: url(../img/content/reviews/photo-1.jpg);
+
+}
+
+.photo2 {
+    background-image: url(../img/content/reviews/photo-2.jpg);
+}
+
+.photo3 {
+    background-image: url(../img/content/reviews/photo-3.jpg);
+}
+
+.photo4 {
+    background-image: url(../img/content/reviews/photo-4.jpg);
+}
+
+.photo5 {
+    background-image: url(../img/content/reviews/photo-5.jpg);
+}
+
+.photo6 {
+    background-image: url(../img/content/reviews/photo-6.jpg);
+}
+
+.photo7 {
+    background-image: url(../img/content/reviews/photo-7.jpg);
+}
+
+.photo8 {
+    background-image: url(../img/content/reviews/photo-8.jpg);
+}
+
+.reviews-item__name {
     font-family: Gagalin;
     font-size: 14px;
     font-weight: 400;
@@ -495,6 +530,9 @@ html {
 }
 
 .reviews-item__comment {
+    max-width: 85%;
+    max-height: 80%;
+    overflow: hidden;
     font-family: Ubuntu;
     font-size: 14px;
     font-weight: 300;
@@ -516,4 +554,6 @@ html {
 
 .reviews-item__link:hover {
     background-color: #1f2122;
-} 
+}
+
+
