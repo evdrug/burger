@@ -1,0 +1,972 @@
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block; }
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none; }
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none; }
+
+@font-face {
+  font-family: Gagalin;
+  src: url("../fonts/Gagalin/Gagalin-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: Lifehack;
+  src: url("../fonts/Lifehack/Lifehack Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: Ubuntu;
+  src: url("../fonts/Ubuntu/bold/Ubuntu-B.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: Ubuntu;
+  src: url("../fonts/Ubuntu/light/Ubuntu-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: Ubuntu;
+  src: url("../fonts/Ubuntu/medium/Ubuntu-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: Ubuntu;
+  src: url("../fonts/Ubuntu/regular/Ubuntu-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  /* overflow-y: hidden;  */ }
+
+.box-one {
+  max-width: 100%;
+  min-height: 650px;
+  height: 100vh;
+  background-color: #010101;
+  background-image: url(../img/content/video-bg.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; }
+
+.box-one:before {
+  content: "";
+  display: block;
+  background-image: url(../img/content/texture.png);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0; }
+
+.box-one__header {
+  width: 100%;
+  padding-top: 12px;
+  padding-left: 77px;
+  padding-right: 80px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  z-index: 1; }
+
+.logo {
+  width: 92px;
+  height: 69px;
+  background-image: url(../img/icons/logo.svg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin-top: -3px; }
+
+.menu-nav {
+  z-index: 10;
+  display: flex;
+  color: white; }
+
+.menu-nav__item {
+  padding-right: 30px;
+  padding-left: 5px; }
+
+.menu-nav__link {
+  color: #ffffff;
+  font-family: Ubuntu;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none; }
+
+.menu-nav__item:first-child {
+  list-style: none; }
+
+.menu-nav__item:last-child {
+  padding-right: 15px; }
+
+.menu__order {
+  padding: 10px 16px 11px 15px;
+  border-radius: 5px;
+  background-color: #e45028;
+  z-index: 1; }
+
+.menu__order:hover {
+  background-color: #c1401e; }
+
+.points {
+  position: fixed;
+  top: 13.7%;
+  right: 4.5%;
+  z-index: 10; }
+
+.points__list {
+  list-style: none;
+  width: 100%; }
+
+.points__item {
+  padding: 6px 8px 9px; }
+
+.points__item:last-child {
+  padding-bottom: 0; }
+
+.point__link {
+  display: block;
+  background-color: white;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer; }
+
+.point__link_active:before {
+  content: "";
+  display: block;
+  border: 1px solid white;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  cursor: default; }
+
+.point__link:hover:before {
+  content: "";
+  display: block;
+  border: 1px solid white;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  left: -6px; }
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 63%;
+  max-width: 940px;
+  margin-left: -40px;
+  z-index: 1; }
+
+.content__img-bg {
+  width: 451px;
+  height: 420px;
+  margin-right: 13px;
+  display: flex;
+  justify-content: center; }
+
+.content__img {
+  height: 100%; }
+
+.content__text {
+  width: 405px;
+  padding-top: 68px; }
+
+.content__text-header {
+  color: #f9b43b;
+  font-family: Gagalin;
+  font-size: 72px;
+  font-weight: 400;
+  padding-bottom: 20px; }
+
+.content__text-body {
+  color: #ffffff;
+  font-family: Lifehack;
+  font-size: 63px;
+  font-weight: 500;
+  line-height: 61px; }
+
+.box-one__next {
+  width: 15px;
+  height: 15px;
+  border-bottom-left-radius: 3px;
+  border: 2px solid #f3f3f3;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  margin-left: -7px; }
+
+.box-best {
+  width: 100%;
+  min-height: 650px;
+  height: 100vh;
+  background-color: #f5f2ed;
+  background-image: url(../img/content/wood-texture.jpg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 0; }
+
+.best-bg__cheese {
+  min-width: 300px;
+  min-height: 300px;
+  background-image: url(../img/content/cheese.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: -144px;
+  top: 23px;
+  z-index: -1; }
+
+.best-bg__products {
+  min-width: 100px;
+  min-height: 100px;
+  background-image: url(../img/content/products.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 188px;
+  left: -42px;
+  z-index: -2; }
+
+.best-bg__tomato {
+  min-width: 427px;
+  min-height: 392px;
+  background-image: url(../img/content/tomato.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: -260px;
+  left: 73px;
+  transform: rotate(27deg);
+  z-index: -1; }
+
+.best-bg__lettuce {
+  min-width: 517px;
+  min-height: 399px;
+  background-image: url(../img/content/lettuce.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 0;
+  right: -353px;
+  top: 33px;
+  transform: rotate(27deg);
+  z-index: -1; }
+
+.best-bg__tomato2 {
+  min-width: 263px;
+  min-height: 267px;
+  background-image: url(../img/content/tomato2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: -125px;
+  right: -70px;
+  z-index: -1; }
+
+.best-bg__cheese2 {
+  min-width: 581px;
+  min-height: 581px;
+  background-image: url(../img/content/cheese2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: -285px;
+  right: -62px;
+  z-index: -2; }
+
+.box-best__title {
+  color: #2f3234;
+  font-family: Gagalin;
+  font-size: 72px;
+  font-weight: 400;
+  height: 31%;
+  display: flex;
+  align-items: center; }
+
+.box-best__list {
+  display: flex;
+  height: 45%;
+  width: 945px; }
+
+.box-best__item {
+  max-width: 33.2%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-right: 2px;
+  text-align: center;
+  padding-top: 17px;
+  z-index: 1; }
+
+.box-best__item:last-child {
+  margin-right: 0; }
+
+.best-item__logo {
+  min-width: 97px;
+  min-height: 89px;
+  margin-bottom: 32px; }
+
+.best-img__meat {
+  background-image: url(../img/icons/meat.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%; }
+
+.best-img__hand {
+  background-image: url(../img/icons/hand.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%; }
+
+.best-img__natural {
+  background-image: url(../img/icons/natural.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%; }
+
+.best-item__title {
+  display: inline-flex;
+  color: #2f3234;
+  font-family: Lifehack;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 13px; }
+
+.best-item__body {
+  display: inline-flex;
+  opacity: 0.8;
+  color: #2f3234;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px; }
+
+.box-reviews {
+  /* margin-top: 10px; */
+  width: 100%;
+  min-height: 650px;
+  height: 100vh; }
+
+.box-reviews__list {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.box-reviews__item {
+  width: 25%;
+  height: 50vh;
+  overflow: hidden;
+  position: relative; }
+
+.reviews-item {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #fff;
+  padding: 20px 33px 20px 20px;
+  filter: blur(100px);
+  transition: .6s; }
+
+.box-reviews__item:hover .reviews-item {
+  filter: blur(0);
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  transition: .6s; }
+
+.box-reviews__photo {
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1); }
+
+.box-reviews__item:hover .box-reviews__photo {
+  transition: 1s;
+  filter: grayscale(0); }
+
+.photo1 {
+  background-image: url(../img/content/reviews/photo-1.jpg); }
+
+.photo2 {
+  background-image: url(../img/content/reviews/photo-2.jpg); }
+
+.photo3 {
+  background-image: url(../img/content/reviews/photo-3.jpg); }
+
+.photo4 {
+  background-image: url(../img/content/reviews/photo-4.jpg); }
+
+.photo5 {
+  background-image: url(../img/content/reviews/photo-5.jpg); }
+
+.photo6 {
+  background-image: url(../img/content/reviews/photo-6.jpg); }
+
+.photo7 {
+  background-image: url(../img/content/reviews/photo-7.jpg); }
+
+.photo8 {
+  background-image: url(../img/content/reviews/photo-8.jpg); }
+
+.reviews-item__name {
+  font-family: Gagalin;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px; }
+
+.reviews-item__comment {
+  max-width: 84%;
+  max-height: 80%;
+  overflow: hidden;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 12px; }
+
+.reviews-item__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: Ubuntu;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 15px 11px;
+  border-radius: 5px;
+  background-color: #2f3234;
+  cursor: pointer; }
+
+.reviews-item__link:hover {
+  background-color: #1f2122; }
+
+@media (max-width: 768px) {
+  .points {
+    display: none; }
+
+  .content {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; } }
+@media (max-width: 480px) {
+  .box-one {
+    min-height: 800px; }
+
+  .points {
+    display: none; }
+
+  .box-one__header {
+    padding: 12px 74px 0 19px; }
+
+  .menu-nav {
+    display: none; }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
+    flex-flow: column;
+    /*justify-content: center;*/
+    /*align-items: center;*/ }
+
+  .content__img-bg {
+    max-width: 361px;
+    max-height: 339px;
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+    margin-bottom: 50px; }
+
+  .content__text {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 0; }
+
+  .content__text-header {
+    font-size: 63px; }
+
+  .content__text-body {
+    font-size: 54px; }
+
+  .box-best {
+    min-height: 800px; }
+
+  .box-best__title {
+    font-size: 50px;
+    height: 15%; }
+
+  .best-bg__cheese, .best-bg__products, .best-bg__lettuce {
+    display: none; }
+
+  .best-bg__tomato {
+    left: -130px;
+    bottom: -200px; }
+
+  .best-bg__tomato2 {
+    bottom: -125px;
+    right: -110px; }
+
+  .best-bg__cheese2 {
+    bottom: -285px;
+    right: -182px; }
+
+  .box-best__list {
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+    height: 60%; }
+
+  .box-best__item {
+    max-width: 100%;
+    flex-flow: row;
+    text-align: left; }
+
+  .best-item__logo {
+    margin-right: 25px; }
+
+  .box-reviews {
+    min-height: 800px; }
+
+  .box-reviews__item {
+    width: 50%;
+    height: 25vh;
+    overflow: hidden;
+    position: relative; }
+
+  .reviews-item__comment {
+    display: none; }
+
+  .reviews-item {
+    text-align: center;
+    align-items: center;
+    justify-content: space-between; }
+
+  .reviews-item__name {
+    font-size: 24px;
+    margin-bottom: 0; } }
+
+/*# sourceMappingURL=mystyle.css.map */
