@@ -1,136 +1,108 @@
 @media (max-width: 768px) {
-    .points {
-        display: none;
-    }
+  .points {
+    display: none; }
 
-    .content {
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-}
-
+  .content {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; } }
 @media (max-width: 480px) {
-    .box-one {
-        min-height: 800px;
-    }
+  .box-one {
+    min-height: 800px; }
 
-    .points {
-        display: none;
-    }
+  .points {
+    display: none; }
 
-    .box-one__header {
-        padding: 12px 74px 0 19px;
-    }
+  .box-one__header {
+    padding: 12px 74px 0 19px; }
 
-    .menu-nav {
-        display: none;
-    }
+  .menu-nav {
+    display: none; }
 
-    .content {
-        margin-left: 0;
-        width: 100%;
-        height: 100%;
+  .content {
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
+    flex-flow: column;
+    /*justify-content: center;*/
+    /*align-items: center;*/ }
 
-        flex-flow: column;
-        /*justify-content: center;*/
-        /*align-items: center;*/
-    }
+  .content__img-bg {
+    max-width: 361px;
+    max-height: 339px;
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+    margin-bottom: 50px; }
 
-    .content__img-bg {
-        max-width: 361px;
-        max-height: 339px;
-        width: 100%;
-        height: 100%;
-        margin-right: 0;
-        margin-bottom: 50px;
+  .content__text {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 0; }
 
-    }
+  .content__text-header {
+    font-size: 63px; }
 
-    .content__text {
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        padding-top: 0;
-    }
+  .content__text-body {
+    font-size: 54px; }
 
-    .content__text-header {
-        font-size: 63px;
-    }
+  .box-best {
+    min-height: 800px; }
 
-    .content__text-body {
-        font-size: 54px;
-    }
+  .box-best__title {
+    font-size: 50px;
+    height: 15%; }
 
-    .box-best {
-        min-height: 800px;
-    }
+  .best-bg__cheese, .best-bg__products, .best-bg__lettuce {
+    display: none; }
 
-    .box-best__title {
-        font-size: 50px;
-        height: 15%;
-    }
+  .best-bg__tomato {
+    left: -130px;
+    bottom: -200px; }
 
-    .best-bg__cheese, .best-bg__products, .best-bg__lettuce {
-        display: none;
-    }
+  .best-bg__tomato2 {
+    bottom: -125px;
+    right: -110px; }
 
-    .best-bg__tomato {
-        left: -130px;
-        bottom: -200px;
-    }
+  .best-bg__cheese2 {
+    bottom: -285px;
+    right: -182px; }
 
-    .best-bg__tomato2 {
-        bottom: -125px;
-        right: -110px;
-    }
+  .box-best__list {
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+    height: 60%; }
 
-    .best-bg__cheese2 {
-        bottom: -285px;
-        right: -182px;
-    }
+  .box-best__item {
+    max-width: 100%;
+    flex-flow: row;
+    text-align: left; }
 
-    .box-best__list {
-        display: flex;
-        flex-flow: column;
-        width: 90%;
-        height: 60%;
-    }
+  .best-item__logo {
+    margin-right: 25px; }
 
-    .box-best__item {
-        max-width: 100%;
-        flex-flow: row;
-        text-align: left;
-    }
+  .box-reviews {
+    min-height: 800px; }
 
-    .best-item__logo {
-        margin-right: 25px;
-    }
+  .box-reviews__item {
+    width: 50%;
+    height: 25vh;
+    overflow: hidden;
+    position: relative; }
 
-    .box-reviews {
-        min-height: 800px;
-    }
+  .reviews-item__comment {
+    display: none; }
 
-    .box-reviews__item {
-        width: 50%;
-        height: 25vh;
-        overflow: hidden;
-        position: relative;
-    }
+  .reviews-item {
+    text-align: center;
+    align-items: center;
+    justify-content: space-between; }
 
-    .reviews-item__comment {
-        display: none;
-    }
+  .reviews-item__name {
+    font-size: 24px;
+    margin-bottom: 0; } }
 
-    .reviews-item {
-        text-align: center;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .reviews-item__name {
-        font-size: 24px;
-        margin-bottom: 0;
-    }
-}
+/*# sourceMappingURL=media.css.map */
