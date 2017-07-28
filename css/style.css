@@ -76,7 +76,7 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: -0;
+    z-index: 0;
 }
 
 .box-one__header {
@@ -87,6 +87,7 @@ html, body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .logo {
@@ -145,17 +146,14 @@ html, body {
 
 .points {
     position: fixed;
-    width: 16px;
-    display: flex;
     top: 13.7%;
     right: 4.5%;
-    justify-content: center;
-    align-items: center;
     z-index: 10;
 }
 
 .points__list {
     list-style: none;
+    width: 100%;
 }
 
 .points__item {
@@ -207,6 +205,7 @@ html, body {
     height: 63%;
     max-width: 940px;
     margin-left: -40px;
+    z-index: 1;
 }
 
 .content__img-bg {
@@ -275,7 +274,7 @@ html, body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    z-index: -10;
+    z-index: 0;
 }
 
 .best-bg__cheese {
@@ -312,7 +311,7 @@ html, body {
     bottom: -260px;
     left: 73px;
     transform: rotate(27deg);
-    z-index: 0;
+    z-index: -1;
 }
 
 .best-bg__lettuce {
@@ -338,7 +337,7 @@ html, body {
     position: absolute;
     bottom: -125px;
     right: -70px;
-    z-index: 0;
+    z-index: -1;
 }
 
 .best-bg__cheese2 {
@@ -350,7 +349,7 @@ html, body {
     position: absolute;
     bottom: -285px;
     right: -62px;
-    z-index: -1;
+    z-index: -2;
 
 }
 
@@ -371,9 +370,6 @@ html, body {
 }
 
 .box-best__item {
-    /* border: 1px solid red; */
-    /*min-width: 286px; */
-    /*max-width: 286px;*/
     max-width: 33.2%;
     display: flex;
     flex-flow: column;
@@ -450,8 +446,6 @@ html, body {
 .box-reviews__item {
     width: 25%;
     height: 50vh;
-    /*min-width: 275px;*/
-    /*min-height: 325px;*/
     overflow: hidden;
     position: relative;
 }
@@ -461,24 +455,22 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     flex-flow: column;
     align-items: flex-start;
     justify-content: center;
     color: #fff;
-    padding-left: 20px;
-    padding-right: 33px;
-    height: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 33px 20px 20px;
     filter: blur(100px);
-    transition: .4s;
+    transition: .6s;
 }
 
-.reviews-item:hover {
+.box-reviews__item:hover .reviews-item {
     filter: blur(0);
-    min-width: 100%;
-    background-color: rgba(0, 0, 0, .4);
-    transition: .4s;
+    background-color: rgba(0, 0, 0, .6);
+    display: flex;
+    transition: .6s;
 }
 
 .box-reviews__photo {
@@ -488,6 +480,11 @@ html, body {
     background-size: cover;
     background-position: center;
     filter:  grayscale(1);
+}
+
+.box-reviews__item:hover .box-reviews__photo {
+    transition: 1s;
+    filter:  grayscale(0);
 }
 
 .photo1 {
@@ -531,7 +528,7 @@ html, body {
 }
 
 .reviews-item__comment {
-    max-width: 85%;
+    max-width: 84%;
     max-height: 80%;
     overflow: hidden;
     font-family: Ubuntu;
