@@ -1,0 +1,70 @@
+.points {
+  position: fixed;
+  top: 13.7%;
+  right: 4.5%;
+  z-index: 10;
+}
+
+.points__list {
+  list-style: none;
+  width: 100%;
+}
+
+.points__item {
+  margin-bottom: 5px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.point__link {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -3px;
+    margin-top: -3px;
+    @include circle(6px, #fff);
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -3px;
+    margin-top: -3px;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+
+  &:hover:after {
+    width: 16px;
+    height: 16px;
+    transform: translate(-5px, -5px);
+    transition: 0.3s;
+  }
+
+}
+
+.points__item_active .point__link:after {
+  width: 16px;
+  height: 16px;
+  transform: translate(0);
+  margin-top: -8px;
+  margin-left: -8px;
+  cursor: default;
+}

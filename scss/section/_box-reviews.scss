@@ -1,0 +1,126 @@
+.box-reviews {
+  /* margin-top: 10px; */
+  width: 100%;
+  min-height: 650px;
+  height: 100vh;
+}
+
+.box-reviews__list {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.box-reviews__item {
+  width: 25%;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.reviews-item {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #fff;
+  padding: 20px 33px 20px 20px;
+  filter: blur(100px);
+  transition: .6s;
+}
+
+.box-reviews__item:hover .reviews-item {
+  filter: blur(0);
+  background-color: rgba(0, 0, 0, .6);
+  display: flex;
+  transition: .6s;
+}
+
+.box-reviews__photo {
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  filter:  grayscale(1);
+}
+
+.box-reviews__item:hover .box-reviews__photo {
+  transition: 1s;
+  filter:  grayscale(0);
+}
+
+.photo1 {
+  background-image: url(../img/content/reviews/photo-1.jpg);
+
+}
+
+.photo2 {
+  background-image: url(../img/content/reviews/photo-2.jpg);
+}
+
+.photo3 {
+  background-image: url(../img/content/reviews/photo-3.jpg);
+}
+
+.photo4 {
+  background-image: url(../img/content/reviews/photo-4.jpg);
+}
+
+.photo5 {
+  background-image: url(../img/content/reviews/photo-5.jpg);
+}
+
+.photo6 {
+  background-image: url(../img/content/reviews/photo-6.jpg);
+}
+
+.photo7 {
+  background-image: url(../img/content/reviews/photo-7.jpg);
+}
+
+.photo8 {
+  background-image: url(../img/content/reviews/photo-8.jpg);
+}
+
+.reviews-item__name {
+  font-family: Gagalin;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.reviews-item__comment {
+  max-width: 84%;
+  max-height: 80%;
+  overflow: hidden;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+
+.reviews-item__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: Ubuntu;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 15px 11px;
+  border-radius: 5px;
+  background-color: #2f3234;
+  cursor: pointer;
+}
+
+.reviews-item__link:hover {
+  background-color: #1f2122;
+}
