@@ -3,11 +3,11 @@
   top: 13.7%;
   right: 4.5%;
   z-index: 10;
-}
 
-.points__list {
-  list-style: none;
-  width: 100%;
+  &__list {
+    list-style: none;
+    width: 100%;
+  }
 }
 
 .points__item {
@@ -42,10 +42,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -3px;
-    margin-top: -3px;
-    width: 6px;
-    height: 6px;
+    @include position_a(6px,6px);
     border: 1px solid #ffffff;
     border-radius: 50%;
     transition: 0.3s;
@@ -61,10 +58,7 @@
 }
 
 .points__item_active .point__link:after {
-  width: 16px;
-  height: 16px;
   transform: translate(0);
-  margin-top: -8px;
-  margin-left: -8px;
+  @include position_a(16px,16px);
   cursor: default;
 }

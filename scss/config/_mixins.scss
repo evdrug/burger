@@ -4,3 +4,20 @@
   border-radius: $width/2;
   background-color: $color;
 }
+
+@mixin btn($pad_t-b, $pad_r-l, $rad, $bg-color, $color-text:$btn_color-text) {
+  padding: $pad_t-b $pad_r-l;
+  border-radius: $rad;
+  cursor: pointer;
+  background-color: $bg-color;
+  color:  $color-text;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@mixin position_a ($width, $heidth){
+  width: $width;
+  height: $heidth;
+  margin-left: -$width/2;
+  margin-top: -$heidth/2;
+}

@@ -1,8 +1,7 @@
 .box-reviews {
-  /* margin-top: 10px; */
   width: 100%;
   min-height: 650px;
-  height: 100vh;
+  height: 100%;
 }
 
 .box-reviews__list {
@@ -15,7 +14,7 @@
 
 .box-reviews__item {
   width: 25%;
-  height: 50vh;
+  height: 50%;
   overflow: hidden;
   position: relative;
 }
@@ -27,21 +26,46 @@
   left: 0;
   right: 0;
   bottom: 0;
+  padding: 17% 7% 7%;
   flex-flow: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   color: #fff;
-  padding: 20px 33px 20px 20px;
   filter: blur(100px);
   transition: .6s;
+  font-size: 14px;
+
+  &__name {
+    font-family: Gagalin;
+    font-weight: 400;
+    margin-bottom: 18px;
+  }
+
+  &__comment {
+    overflow: hidden;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 14px;
+  }
+
+  &__link {
+    font-size: 13px;
+    font-weight: 500;
+    @include btn(8px,15px,5px,#2f3234);
+  }
+
+  &__link:hover {
+    background-color: darken(#2f3234, 5%)
+  }
+
+  .box-reviews__item:hover & {
+    filter: blur(0);
+    background-color: rgba(0, 0, 0, .6);
+    transition: .6s;
+  }
 }
 
-.box-reviews__item:hover .reviews-item {
-  filter: blur(0);
-  background-color: rgba(0, 0, 0, .6);
-  display: flex;
-  transition: .6s;
-}
+
 
 .box-reviews__photo {
   height: 100%;
@@ -50,77 +74,14 @@
   background-size: cover;
   background-position: center;
   filter:  grayscale(1);
+
+  .box-reviews__item:hover & {
+    transition: 1s;
+    filter:  grayscale(0);
+  }
 }
 
-.box-reviews__item:hover .box-reviews__photo {
-  transition: 1s;
-  filter:  grayscale(0);
-}
 
-.photo1 {
-  background-image: url(../img/content/reviews/photo-1.jpg);
 
-}
 
-.photo2 {
-  background-image: url(../img/content/reviews/photo-2.jpg);
-}
 
-.photo3 {
-  background-image: url(../img/content/reviews/photo-3.jpg);
-}
-
-.photo4 {
-  background-image: url(../img/content/reviews/photo-4.jpg);
-}
-
-.photo5 {
-  background-image: url(../img/content/reviews/photo-5.jpg);
-}
-
-.photo6 {
-  background-image: url(../img/content/reviews/photo-6.jpg);
-}
-
-.photo7 {
-  background-image: url(../img/content/reviews/photo-7.jpg);
-}
-
-.photo8 {
-  background-image: url(../img/content/reviews/photo-8.jpg);
-}
-
-.reviews-item__name {
-  font-family: Gagalin;
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 20px;
-}
-
-.reviews-item__comment {
-  max-width: 84%;
-  max-height: 80%;
-  overflow: hidden;
-  font-family: Ubuntu;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 24px;
-  margin-bottom: 12px;
-}
-
-.reviews-item__link {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #fff;
-  font-family: Ubuntu;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 11px 15px 11px;
-  border-radius: 5px;
-  background-color: #2f3234;
-  cursor: pointer;
-}
-
-.reviews-item__link:hover {
-  background-color: #1f2122;
-}
