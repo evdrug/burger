@@ -1,0 +1,64 @@
+.points {
+  position: fixed;
+  top: 13.7%;
+  right: 4.5%;
+  z-index: 10;
+
+  &__list {
+    list-style: none;
+    width: 100%;
+  }
+}
+
+.points__item {
+  margin-bottom: 5px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.point__link {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -3px;
+    margin-top: -3px;
+    @include circle(6px, #fff);
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include position_a(6px,6px);
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+
+  &:hover:after {
+    width: 16px;
+    height: 16px;
+    transform: translate(-5px, -5px);
+    transition: 0.3s;
+  }
+
+}
+
+.points__item_active .point__link:after {
+  transform: translate(0);
+  @include position_a(16px,16px);
+  cursor: default;
+}
