@@ -767,7 +767,7 @@ p {
   bottom: 0;
   background-color: #2f3234;
   opacity: 0.93;
-  padding: 60px 2% 0 80px; }
+  padding: 60px 6% 0 80px; }
 
 .team__title {
   color: #f9b43b;
@@ -814,7 +814,8 @@ p {
       transition: 0.3s; }
   .team-accordeon__team_active:hover .team-accordeon__info {
     transition: 0.8s;
-    height: 100%; }
+    height: 100%;
+    margin-bottom: 37px; }
   .team-accordeon__img-wrapper {
     width: 30%;
     display: flex;
@@ -832,7 +833,8 @@ p {
     font-family: Ubuntu;
     font-size: 14px; }
   .team-accordeon__title {
-    font-weight: 700; }
+    font-weight: 700;
+    margin-bottom: 15px; }
   .team-accordeon__text {
     font-weight: 300; }
 

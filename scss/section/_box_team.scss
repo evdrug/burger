@@ -15,7 +15,7 @@
   bottom: 0;
   background-color: #2f3234;
   opacity: 0.93;
-  padding: 60px 2% 0 80px;
+  padding: 60px 6% 0 80px;
 }
 
 .team__title {
@@ -78,7 +78,7 @@
     .team-accordeon__info {
       transition: 0.8s;
       height: 100%;
-      //margin-bottom: 37px;
+      margin-bottom: 37px;
     }
 
 
@@ -113,6 +113,7 @@
 
   &__title {
     font-weight:   700;
+    margin-bottom: 15px;
   }
 
   &__text {
