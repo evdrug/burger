@@ -1,4 +1,6 @@
-@import "normalize";
-@import "style";
+@import "core/core";
+@import "config/config";
+@import "layout/base";
+@import "section/section";
 @import "media_480";
 
