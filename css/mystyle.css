@@ -748,6 +748,96 @@ p {
   font-weight: 300;
   line-height: 24px; }
 
+.box__burger {
+  background: linear-gradient(180deg, #f9b43b 0, #eb8c38 40%, #eb8c38 60%, #eb8c38 0, #f9b43b); }
+
+.box__team {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/content/team.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center; }
+
+.container__team {
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2f3234;
+  opacity: 0.93;
+  padding: 60px 6% 0 80px; }
+
+.team__title {
+  color: #f9b43b;
+  font-family: Gagalin;
+  font-size: 72px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 62px; }
+
+.team-accordeon {
+  color: #fff;
+  padding-left: 18px; }
+  .team-accordeon__link {
+    display: inline-block;
+    font-family: Gagalin;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 17px;
+    position: relative; }
+  .team-accordeon__link:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    border-top: 6px solid #fff;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    transition: 0.3s; }
+  .team-accordeon__info {
+    display: flex;
+    margin-bottom: 10px;
+    height: 0;
+    overflow: hidden;
+    transition: 0.8s; }
+  .team-accordeon__team_active:hover .team-accordeon__link {
+    color: #f9b43b; }
+    .team-accordeon__team_active:hover .team-accordeon__link:before {
+      bottom: 6px;
+      transform: rotate(180deg);
+      border-top: 6px solid #f9b43b;
+      transition: 0.3s; }
+  .team-accordeon__team_active:hover .team-accordeon__info {
+    transition: 0.8s;
+    height: 100%;
+    margin-bottom: 37px; }
+  .team-accordeon__img-wrapper {
+    width: 30%;
+    display: flex;
+    justify-content: center; }
+  .team-accordeon__img {
+    width: 100px;
+    height: 100px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%; }
+  .team-accordeon__body {
+    width: 70%; }
+  .team-accordeon__title, .team-accordeon__text {
+    font-family: Ubuntu;
+    font-size: 14px; }
+  .team-accordeon__title {
+    font-weight: 700;
+    margin-bottom: 15px; }
+  .team-accordeon__text {
+    font-weight: 300; }
+
 .box-reviews {
   width: 100%;
   min-height: 650px;
