@@ -1,19 +1,14 @@
-.box__menu {
+.box-menu {
   background-image: url(../img/content/menu_bg.jpg) ;
   background-position: center;
   background-repeat:no-repeat;
   background-size: cover;
   justify-content: space-between;
 
-}
-
-.box-menu__title-container {
-  padding-left: 95px;
-  padding-top: 81px;
-}
-
-.box-menu {
-
+  &__title-container {
+    padding-left: 95px;
+    padding-top: 81px;
+  }
 
   &__title {
     color: #ffffff;
@@ -63,12 +58,16 @@
   }
 
   &__link-text {
-    border: 1px solid red;
     display: block;
+
+    width: 650px;
     position: absolute;
     top: 50%;
-    transform: rotate(-90deg) translateX(-50%)  ;
-    width: 100%;
+    left: -285px;
+    margin-top: -40px;
+    text-align: center;
+    transform: rotate(-90deg);
+
     color: #ffffff;
     font-family: Gagalin;
     font-size: 40px;

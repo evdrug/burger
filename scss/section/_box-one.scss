@@ -1,4 +1,4 @@
-.box__one {
+.box-one {
   background-color: #010101;
   background-image: url(../img/content/video-bg.png);
   background-repeat: no-repeat;
@@ -34,15 +34,23 @@
   background-size: cover;
 }
 
-.menu {
-  padding-top: 20px;
+.box-one__nav {
+  display: flex;
+  justify-content:center;
+  align-items: center;
   font-size: 13px;
   font-weight: 500;
+  padding-top: 8px;
+}
 
+.menu {
+  margin-right: 15px;
+  //padding-top: 4px;
   &__order {
-    @include btn(10px, 15px, 5px, #e45028);
+    @include btn(8px, 15px, 5px, #e45028);
     z-index: 1;
   }
+
 
   &__order:hover {
     background-color: darken(#e45028, 5%);
@@ -52,8 +60,8 @@
 .menu-nav {
   display: inline-block;
   z-index: 10;
-  padding-top: 4px;
-  margin-right: 12px;
+
+
 
   &__item {
     display: inline-block;
@@ -64,7 +72,7 @@
     display: inline-block;
     vertical-align: middle;
     @include circle(4px, #fff);
-    margin: 0 14px;
+    margin: 0 15px 0 13px;
   }
 
   &__item:first-child:before {
