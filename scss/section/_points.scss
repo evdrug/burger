@@ -4,6 +4,12 @@
   right: 4.5%;
   //z-index: 10;
 
+  @include media_768 {
+    z-index: -1000;
+
+  }
+
+
   &__list {
     list-style: none;
     width: 100%;

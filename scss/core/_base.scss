@@ -14,6 +14,10 @@ html {
   @include media_480 {
     font-size: 13px;
   }
+
+  @include media_320 {
+    font-size: 12px;
+  }
 }
 
 body {
