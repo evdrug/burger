@@ -31,11 +31,11 @@
   width: 50%;
 
   &_left {
-    padding: 5px 0 8px 0;
+    padding: convert_rem(5px) 0 convert_rem(8px) 0;
   }
 
   &_right {
-    padding-top: 17px;
+    padding-top: convert_rem(17px);
 
   }
 }
@@ -44,7 +44,7 @@
 .footer-block__addr {
   color: #ffffff;
   font-weight: 300;
-  padding-bottom: 1px;
+  padding-bottom: convert_rem(1px);
 }
 
 .footer-block__tel {
@@ -52,12 +52,12 @@
   text-decoration: none;
   color: #e45028;
   font-weight: 700;
-  padding-left: 3px;
+  padding-left: convert_rem(3px);
 
   &-icon {
     display: inline-block;
-    width: 12px;
-    height: 11px;
+    width: convert_rem(12px);
+    height: convert_rem(11px);
     vertical-align: middle;
     fill:  #e45028;
   }
@@ -74,7 +74,7 @@
 
 .social-list {
   display: inline-block;
-  margin-right: 16px;
+  margin-right: convert_rem(16px);
   &:last-child {
     margin-right: 0;
   }
@@ -85,8 +85,8 @@
 
   &__icon {
     display: inline-block;
-    width: 23px;
-    height: 23px;
+    width: convert_rem(23px);
+    height: convert_rem(23px);
 
     vertical-align: middle;
     fill: #fff;

@@ -8,94 +8,86 @@
   align-items: center;
   justify-content: center;
   z-index: 0;
-  padding-top: 6px;
+  padding-top: convert_rem(6px);
 
   &__cheese {
-    min-width: 300px;
-    min-height: 300px;
+    min-width: convert_rem(300px);
+    min-height: convert_rem(300px);
     background-image: url(../img/content/cheese.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    left: -144px;
-    top: 23px;
+    left: convert_rem(-144px);
+    top: convert_rem(23px);
     z-index: -1;
   }
 
   &__products {
-    min-width: 100px;
-    min-height: 100px;
+    min-width: convert_rem(100px);
+    min-height: convert_rem(100px);
     background-image: url(../img/content/products.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    top: 188px;
-    left: -42px;
+    top: convert_rem(188px);
+    left: convert_rem(-42px);
     z-index: -2;
   }
 
   &__tomato {
-    min-width: 427px;
-    min-height: 392px;
+    min-width: convert_rem(427px);
+    min-height: convert_rem(392px);
     background-image: url(../img/content/tomato.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    bottom: -260px;
-    left: 73px;
+    bottom: convert_rem(-260px);
+    left: convert_rem(73px);
     transform: rotate(27deg);
     z-index: -1;
   }
 
   &__lettuce {
-    min-width: 517px;
-    min-height: 399px;
+    min-width: convert_rem(517px);
+    min-height: convert_rem(399px);
     background-image: url(../img/content/lettuce.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     z-index: 0;
-    right: -353px;
-    top: 33px;
+    right: convert_rem(-353px);
+    top: convert_rem(33px);
     transform: rotate(27deg);
     z-index: -1;
   }
 
   &__tomato2 {
-    min-width: 263px;
-    min-height: 267px;
+    min-width: convert_rem(263px);
+    min-height: convert_rem(267px);
     background-image: url(../img/content/tomato2.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    bottom: -125px;
-    right: -70px;
+    bottom: convert_rem(-125px);
+    right: convert_rem(-70px);
     z-index: -1;
   }
 
   &__cheese2 {
-    min-width: 581px;
-    min-height: 581px;
+    min-width: convert_rem(581px);
+    min-height: convert_rem(581px);
     background-image: url(../img/content/cheese2.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    bottom: -285px;
-    right: -62px;
+    bottom: convert_rem(-285px);
+    right: convert_rem(-62px);
     z-index: -2;
 
   }
 }
 .box-best__title {
-  color: #2f3234;
-  font-family: Gagalin;
-  font-size: 72px;
-  font-weight: 400;
-  text-align: center;
-  display: block;
-  width: 100%;
-  margin: 0;
-  margin-bottom: 65px;
+  @include text-header($m_bottom:65px);
 }
 
 .box-best__list {
@@ -117,17 +109,17 @@
 
   &__logo {
     width: 100%;
-    min-width: 97px;
-    min-height: 89px;
-    margin-bottom: 32px;
+    //min-width: convert_rem(97px);
+    //min-height: convert_rem(89px);
+    margin-bottom: convert_rem(32px);
   }
 
   &__title {
-    color: #2f3234;
+    //color: #2f3234;
     font-family: Lifehack;
-    font-size: 24px;
+    font-size: convert_rem(24px);
     font-weight: 500;
-    margin-bottom: 14px;
+    margin-bottom: convert_rem(14px);
     line-height: 1.2;
     display: block;
 
@@ -136,18 +128,18 @@
   &__text {
     display: block;
     opacity: 0.8;
-    color: #2f3234;
-    font-family: Ubuntu;
-    font-size: 14px;
+    //color: #2f3234;
+    //font-family: Ubuntu;
+    font-size: convert_rem(14px);
     font-weight: 300;
-    line-height: 24px;
+    line-height: convert_rem(24px);
   }
 }
 
 
 .logo-pic {
-  width: 97px;
-  height: 89px;
+  width: convert_rem(97px);
+  height: convert_rem(89px);
   &_red {
     fill: #e25028;
   }

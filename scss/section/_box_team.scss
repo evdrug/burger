@@ -15,15 +15,24 @@
     background-color: #2f3234;
     opacity: 0.93;
     padding: 5.45% 6% 0 7.3%;
+
+
+    @include media_768 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__title {
-    color: #f9b43b;
-    font-family: Gagalin;
-    font-size: 72px;
-    font-weight: 400;
-    margin: 0;
-    margin-bottom: 62px;
+    @include text-header($orange,65px);
+
+    @include media_768 {
+      font-size: convert_rem(72px);
+    }
   }
 }
 
@@ -31,41 +40,57 @@
 
 .team-accordeon {
   color: #fff;
-  padding-left: 20px;
+  padding-left: convert_rem(20px);
 
   &__team {
-    margin-bottom: 13px;
+    margin-bottom: convert_rem(13px);
   }
 
   &__link {
     display: inline-block;
     font-family: Gagalin;
-    font-size: 14px;
+    font-size: convert_rem(14px);
     font-weight: 400;
     text-decoration: none;
     color: #fff;
-    margin-bottom: 15px;
+    margin-bottom: convert_rem(15px);
     position: relative;
+
+    @include media_768 {
+      font-size: 25px;
+    }
   }
 
   &__link:before {
     content: '';
     position: absolute;
     bottom: 0;
-    left: -20px;
-    border-top: 6px solid #fff;
-    border-left: 6px solid transparent ;
-    border-right:6px solid transparent;
-    border-bottom: 6px solid transparent;
+    left: convert_rem(-20px);
+    border-top: convert_rem(6px) solid #fff;
+    border-left: convert_rem(6px) solid transparent ;
+    border-right:convert_rem(6px) solid transparent;
+    border-bottom: convert_rem(6px) solid transparent;
     transition: 0.8s;
+
+    @include media_768 {
+      font-size: convert_rem(25px);
+      bottom: 25%;
+    }
   }
 
   &__info {
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: convert_rem(10px);
     height: 0;
     overflow: hidden;
     transition: 0.8s;
+
+    @include media_768 {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
   }
 
   &__info:last-child {
@@ -73,22 +98,29 @@
   }
 
   &__team_active:hover {
-    margin-bottom: 37px;
+    margin-bottom: convert_rem(37px);
 
     .team-accordeon__link {
       color: #f9b43b;
       &:before {
-        bottom: 6px;
+        bottom: convert_rem(6px);
         transform: rotate(180deg);
-        border-top: 6px solid #f9b43b;
+        border-top: convert_rem(6px) solid #f9b43b;
         transition: 0.8s;
+
+        @include media_768 {
+          bottom: 40%;
+        }
       }
     }
 
     .team-accordeon__info {
       transition: 0.8s;
-      height: 100px;
-
+      height: convert_rem(100px);
+      //height: auto;
+      @include media_768 {
+        height: 200px
+      }
 
     }
 
@@ -100,11 +132,15 @@
     width: 30%;
     display: flex;
     justify-content:center;
+
+    @include media_768 {
+      margin-bottom: 20px;
+    }
   }
 
   &__img {
-    width: 100px;
-    height: 100px;
+    width: convert_rem(100px);
+    height: convert_rem(100px);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center;
@@ -118,17 +154,18 @@
   }
 
   &__title, &__text {
-    font-family: Ubuntu;
-    font-size: 14px;
+    font-size: convert_rem(14px);
   }
 
   &__title {
     font-weight:   700;
-    margin-bottom: 15px;
+    margin-bottom: convert_rem(15px);
+
+
   }
 
   &__text {
-    font-weight:   300;
+    font-weight: 300;
   }
 
 }

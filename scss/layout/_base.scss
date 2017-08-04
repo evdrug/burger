@@ -1,6 +1,6 @@
 body {
   font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
-  color: black;
+  color: $color-text;
 }
 
 .wrapper {
@@ -15,12 +15,14 @@ body {
 .box {
   position: relative;
   height: 100%;
+  min-height: convert_rem(650px);
   display: flex;
   overflow: hidden;
 }
 
 .container {
-  width: 940px;
+  max-width: convert_rem(940px);
+  width: 93%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -31,3 +33,4 @@ body {
 p {
   margin: 0;
 }
+

@@ -1,6 +1,6 @@
 .box-reviews {
   width: 100%;
-  min-height: 650px;
+  min-height: convert_rem(650px);
   height: 100%;
 }
 
@@ -17,6 +17,11 @@
   height: 50%;
   overflow: hidden;
   position: relative;
+
+  @include media_768 {
+    width: 50%;
+    height: 25%;
+  }
 }
 
 .reviews-item {
@@ -31,25 +36,26 @@
   align-items: flex-start;
   justify-content: flex-start;
   color: #fff;
-  filter: blur(100px);
+  filter: blur(convert_rem(100px));
   transition: .6s;
-  font-size: 14px;
+  font-size: convert_rem(14px);
 
   &__name {
     font-family: Gagalin;
     font-weight: 400;
-    margin-bottom: 18px;
+    margin-bottom: convert_rem(18px);
+
   }
 
   &__comment {
     overflow: hidden;
     font-weight: 300;
-    line-height: 24px;
-    margin-bottom: 14px;
+    line-height: convert_rem(24px);
+    margin-bottom: convert_rem(14px);
   }
 
   &__link {
-    font-size: 13px;
+    font-size: convert_rem(13px);
     font-weight: 500;
     @include btn(8px,15px,5px,#2f3234);
   }

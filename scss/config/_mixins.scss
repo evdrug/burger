@@ -1,13 +1,13 @@
 @mixin circle($width, $color) {
-  width: $width;
-  height: $width;
-  border-radius: $width/2;
+  width: convert_rem($width);
+  height: convert_rem($width);
+  border-radius: convert_rem($width)/2;
   background-color: $color;
 }
 
 @mixin btn($pad_t-b, $pad_r-l, $rad, $bg-color, $color-text:$btn_color-text) {
-  padding: $pad_t-b $pad_r-l;
-  border-radius: $rad;
+  padding: convert_rem($pad_t-b) convert_rem($pad_r-l);
+  border-radius: convert_rem($rad);
   cursor: pointer;
   background-color: $bg-color;
   color:  $color-text;
@@ -16,8 +16,49 @@
 }
 
 @mixin position_a ($width, $heidth){
-  width: $width;
-  height: $heidth;
-  margin-left: -$width/2;
-  margin-top: -$heidth/2;
+  width: convert_rem($width);
+  height: convert_rem($heidth);
+  margin-left: convert_rem(-$width)/2;
+  margin-top: convert_rem(-$heidth)/2;
 }
+
+@function convert_rem($px) {
+    @return $px/16px+0rem;
+}
+
+@mixin text-header ($color:$color-text ,$m_bottom:0px) {
+  color: $color;
+  font-family: Gagalin;
+  font-size: convert_rem(72px);
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: convert_rem($m_bottom);
+}
+
+
+@mixin media_all {
+  @media (min-width: convert_rem(768px)) {
+    @content
+  }
+}
+
+@mixin media_940 {
+  @media (max-width: convert_rem(940px)) {
+    @content;
+  }
+}
+
+
+
+@mixin media_768 {
+  @media (max-width: convert_rem(768px)) {
+    @content;
+  }
+}
+
+@mixin media_480 {
+  @media (max-width: convert_rem(480px)) {
+    @content;
+  }
+}
+

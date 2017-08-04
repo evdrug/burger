@@ -11,7 +11,7 @@
 }
 
 .points__item {
-  margin-bottom: 5px;
+  margin-bottom: convert_rem(5px);
 
   &:last-child {
     padding-bottom: 0;
@@ -20,8 +20,8 @@
 
 .point__link {
   display: block;
-  width: 16px;
-  height: 16px;
+  width: convert_rem(16px);
+  height: convert_rem(16px);
   position: relative;
   cursor: pointer;
 
@@ -31,8 +31,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -3px;
-    margin-top: -3px;
+    margin-left: convert_rem(-3px);
+    margin-top: convert_rem(-3px);
     @include circle(6px, #fff);
   }
 
@@ -43,15 +43,15 @@
     top: 50%;
     left: 50%;
     @include position_a(6px,6px);
-    border: 1px solid #ffffff;
+    border: convert_rem(1px) solid #ffffff;
     border-radius: 50%;
     transition: 0.3s;
   }
 
   &:hover:after {
-    width: 16px;
-    height: 16px;
-    transform: translate(-5px, -5px);
+    width: convert_rem(16px);
+    height: convert_rem(16px);
+    transform: translate(convert_rem(-5px), convert_rem(-5px));
     transition: 0.3s;
   }
 
