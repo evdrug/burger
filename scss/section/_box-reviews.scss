@@ -40,6 +40,13 @@
   transition: .6s;
   font-size: convert_rem(14px);
 
+  @include media_768 {
+    align-items: center;
+    justify-content: center;
+    padding: 3%;
+    text-align: center;
+  }
+
   &__name {
     font-family: Gagalin;
     font-weight: 400;
@@ -48,10 +55,15 @@
   }
 
   &__comment {
+    display: inline-block;
     overflow: hidden;
     font-weight: 300;
     line-height: convert_rem(24px);
     margin-bottom: convert_rem(14px);
+
+    @include media_480 {
+      display: none;
+    }
   }
 
   &__link {

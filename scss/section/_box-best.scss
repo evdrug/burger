@@ -10,6 +10,8 @@
   z-index: 0;
   padding-top: convert_rem(6px);
 
+
+
   &__cheese {
     min-width: convert_rem(300px);
     min-height: convert_rem(300px);
@@ -20,6 +22,10 @@
     left: convert_rem(-144px);
     top: convert_rem(23px);
     z-index: -1;
+
+    @include media_768 {
+      display: none;
+    }
   }
 
   &__products {
@@ -32,6 +38,10 @@
     top: convert_rem(188px);
     left: convert_rem(-42px);
     z-index: -2;
+
+    @include media_768 {
+      display: none;
+    }
   }
 
   &__tomato {
@@ -59,6 +69,10 @@
     top: convert_rem(33px);
     transform: rotate(27deg);
     z-index: -1;
+
+    @include media_768 {
+      display: none;
+    }
   }
 
   &__tomato2 {
@@ -88,6 +102,11 @@
 }
 .box-best__title {
   @include text-header($m_bottom:65px);
+
+  @include media_480 {
+    margin-bottom: 5%;
+    text-align: center;
+  }
 }
 
 .box-best__list {
@@ -96,22 +115,41 @@
   justify-content: space-around;
   align-items: flex-start;
 
+  @include media_480 {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .item-list {
-  max-width: 33.2%;
+  max-width: calc(100%/3 - 10px);
   height: 100%;
   text-align: center;
   z-index: 1;
-
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+
+  @include media_480 {
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 3%;
+
+  }
 
   &__logo {
     width: 100%;
     //min-width: convert_rem(97px);
     //min-height: convert_rem(89px);
     margin-bottom: convert_rem(32px);
+    flex: 1;
+
+    @include media_480 {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
   }
 
   &__title {

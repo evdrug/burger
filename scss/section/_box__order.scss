@@ -7,6 +7,13 @@
 
   &__title {
     @include text-header($orange,65px);
+    text-align: center;
+
+
+    @include media_480 {
+      font-size: 50px;
+      margin-bottom: 0;
+    }
   }
 
   &__form {
@@ -37,6 +44,13 @@ form {
 
   }
 
+  @include media_480 {
+    flex-direction: column;
+    margin:0 auto;
+    width: 95%;
+
+  }
+
 }
 
 .form-left, .form-right {
@@ -53,7 +67,32 @@ form {
       margin-bottom: 0;
     }
   }
+
+  @include media_480 {
+    margin-bottom: convert_rem(5px);
+
+  }
+
 }
+
+.form-left {
+  .input-row {
+    @include media_480 {
+      margin-bottom: convert_rem(5px);
+    }
+  }
+
+}
+
+.form-right {
+
+  @include media_480 {
+    .input-row {
+      justify-content: center;
+    }
+  }
+}
+
 
 .input-row {
   display: flex;
@@ -63,6 +102,8 @@ form {
   &:last-child {
     margin-bottom: 0;
   }
+
+
 }
 
 .input-form {

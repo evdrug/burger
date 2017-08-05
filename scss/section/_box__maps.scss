@@ -22,21 +22,39 @@
 
 .box-maps__footer-container {
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
   align-items: flex-start;
+
+  @include media_480 {
+    flex-direction: column;
+  }
 }
 
 .footer-block{
   display: inline-block;
   width: 50%;
 
+  @include media_480 {
+    width: 100%;
+    text-align: center;
+  }
+
   &_left {
     padding: convert_rem(5px) 0 convert_rem(8px) 0;
+
+    @include media_480 {
+      padding-top: convert_rem(20px);
+
+    }
   }
 
   &_right {
     padding-top: convert_rem(17px);
 
+    @include media_480 {
+      padding-top: convert_rem(15px);
+      padding-bottom: convert_rem(20px);
+    }
   }
 }
 
@@ -45,6 +63,12 @@
   color: #ffffff;
   font-weight: 300;
   padding-bottom: convert_rem(1px);
+
+  @include media_480 {
+    padding-bottom: convert_rem(5px);
+  }
+
+
 }
 
 .footer-block__tel {
@@ -70,11 +94,23 @@
   padding: 0;
   margin: 0;
   font-size: 0;
+
+  @include media_480 {
+    text-align: center;
+  }
 }
 
 .social-list {
   display: inline-block;
   margin-right: convert_rem(16px);
+
+  @include  media_480 {
+    margin-right: convert_rem(25px);
+  }
+
+  &__link {
+    display: inline-block;
+  }
   &:last-child {
     margin-right: 0;
   }
