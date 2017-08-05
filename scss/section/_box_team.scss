@@ -57,7 +57,7 @@
     position: relative;
 
     @include media_768 {
-      font-size: 25px;
+      font-size: convert_rem(25px);
     }
   }
 
@@ -119,7 +119,7 @@
       height: convert_rem(100px);
       //height: auto;
       @include media_768 {
-        height: 200px
+        height: convert_rem(200px);
       }
 
     }
@@ -134,7 +134,7 @@
     justify-content:center;
 
     @include media_768 {
-      margin-bottom: 20px;
+      margin-bottom: convert_rem(20px);
     }
   }
 

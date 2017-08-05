@@ -65,10 +65,15 @@
     background-color: darken(#e45028, 5%);
   }
 
+  @include media_768 {
+    display: none;
+  }
+
+
   &__accord{
-    width: 25px;
-    height: 24px;
-    margin-left: 30px;
+    width: convert_rem(25px);
+    height: convert_rem(24px);
+    margin-left: convert_rem(30px);
     justify-content: center;
     align-items: center;
     display: none;
@@ -76,40 +81,37 @@
     @include media_768 {
       display: flex;
     }
+
   }
   &__accord-icon {
     display: block;
-    width: 24px;
-    height: 4px;
+    width: convert_rem(24px);
+    height: convert_rem(4px);
     background-color: #fff;
-    border-radius: 2px;
+    border-radius: convert_rem(2px);
 
     position: relative;
 
     &:before {
       content: "";
-      width: 24px;
-      height: 4px;
+      width: convert_rem(24px);
+      height: convert_rem(4px);
       background-color: #fff;
-      border-radius: 2px;
+      border-radius: convert_rem(2px);
       position: absolute;
-      top: 10px;
+      top: convert_rem(10px);
     }
 
     &:after {
       content: "";
-      width: 24px;
-      height: 4px;
+      width: convert_rem(24px);
+      height: convert_rem(4px);
       background-color: #fff;
-      border-radius: 2px;
+      border-radius: convert_rem(2px);
       position: absolute;
-      top: -10px;
+      top: convert_rem(-10px);
     }
-  }
 
-
-  @include media_768 {
-    display: none;
   }
 }
 
@@ -238,7 +240,7 @@
     @include text-header($orange,13px);
     white-space: nowrap;
     @include media_480 {
-      font-size: 63px;
+      font-size: convert_rem(63px);
 
     }
   }

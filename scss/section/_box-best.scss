@@ -147,7 +147,7 @@
     flex: 1;
 
     @include media_480 {
-      margin-right: 20px;
+      margin-right: convert_rem(20px);
       margin-bottom: 0;
     }
   }
