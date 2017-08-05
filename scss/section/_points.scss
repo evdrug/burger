@@ -2,7 +2,7 @@
   position: fixed;
   top: 13.7%;
   right: 4.5%;
-  //z-index: 10;
+  z-index: 10;
 
   @include media_768 {
     z-index: -1000;

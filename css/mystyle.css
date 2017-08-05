@@ -1480,7 +1480,8 @@ form {
 .points {
   position: fixed;
   top: 13.7%;
-  right: 4.5%; }
+  right: 4.5%;
+  z-index: 10; }
   @media (max-width: 768px) {
     .points {
       z-index: -1000; } }
