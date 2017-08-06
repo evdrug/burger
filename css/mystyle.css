@@ -1188,12 +1188,19 @@ p {
     font-family: Gagalin;
     font-weight: 400;
     margin-bottom: 1.125rem; }
+    @media (max-width: 768px) {
+      .reviews-item__name {
+        margin-bottom: 0.625rem; } }
   .reviews-item__comment {
     display: inline-block;
     overflow: hidden;
     font-weight: 300;
     line-height: 1.5rem;
     margin-bottom: 0.875rem; }
+    @media (max-width: 768px) {
+      .reviews-item__comment {
+        line-height: 1.25rem;
+        margin-bottom: 0.8125rem; } }
     @media (max-width: 480px) {
       .reviews-item__comment {
         display: none; } }

@@ -60,6 +60,9 @@
     font-weight: 400;
     margin-bottom: convert_rem(18px);
 
+    @include media_768 {
+      margin-bottom: convert_rem(10px);
+    }
   }
 
   &__comment {
@@ -68,6 +71,11 @@
     font-weight: 300;
     line-height: convert_rem(24px);
     margin-bottom: convert_rem(14px);
+
+    @include media_768 {
+      line-height: convert_rem(20px);
+      margin-bottom: convert_rem(13px);
+    }
 
     @include media_480 {
       display: none;
