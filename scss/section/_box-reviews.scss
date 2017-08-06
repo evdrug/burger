@@ -36,16 +36,24 @@
   align-items: flex-start;
   justify-content: flex-start;
   color: #fff;
-  filter: blur(convert_rem(100px));
-  transition: .6s;
-  font-size: convert_rem(14px);
+
+  @include media {
+    filter: blur(convert_rem(100px));
+    transition: .6s;
+    font-size: convert_rem(14px);
+  }
+
 
   @include media_768 {
     align-items: center;
     justify-content: center;
     padding: 3%;
     text-align: center;
+    transform: scale(0);
+    transition: .3s;
   }
+
+
 
   &__name {
     font-family: Gagalin;
@@ -73,13 +81,21 @@
   }
 
   &__link:hover {
-    background-color: darken(#2f3234, 5%)
+    background-color: darken(#2f3234, 5%);
   }
 
   .box-reviews__item:hover & {
-    filter: blur(0);
     background-color: rgba(0, 0, 0, .6);
-    transition: .6s;
+
+    @include media {
+      filter: blur(0);
+      transition: .6s;
+    }
+
+    @include media_768 {
+      transform: scale(1);
+      transition: 0.3s;
+    }
   }
 }
 
@@ -94,8 +110,11 @@
   filter:  grayscale(1);
 
   .box-reviews__item:hover & {
-    transition: 1s;
-    filter:  grayscale(0);
+    @include media{
+      transition: 1s;
+      filter:  grayscale(0);
+    }
+
   }
 }
 

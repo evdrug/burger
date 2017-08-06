@@ -1162,12 +1162,14 @@ p {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  color: #fff;
-  -webkit-filter: blur(6.25rem);
-          filter: blur(6.25rem);
-  -webkit-transition: .6s;
-  transition: .6s;
-  font-size: 0.875rem; }
+  color: #fff; }
+  @media (min-width: 768px) {
+    .reviews-item {
+      -webkit-filter: blur(6.25rem);
+              filter: blur(6.25rem);
+      -webkit-transition: .6s;
+      transition: .6s;
+      font-size: 0.875rem; } }
   @media (max-width: 768px) {
     .reviews-item {
       -webkit-box-align: center;
@@ -1177,7 +1179,11 @@ p {
           -ms-flex-pack: center;
               justify-content: center;
       padding: 3%;
-      text-align: center; } }
+      text-align: center;
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      -webkit-transition: .3s;
+      transition: .3s; } }
   .reviews-item__name {
     font-family: Gagalin;
     font-weight: 400;
@@ -1204,11 +1210,19 @@ p {
   .reviews-item__link:hover {
     background-color: #232527; }
   .box-reviews__item:hover .reviews-item {
-    -webkit-filter: blur(0);
-            filter: blur(0);
-    background-color: rgba(0, 0, 0, 0.6);
-    -webkit-transition: .6s;
-    transition: .6s; }
+    background-color: rgba(0, 0, 0, 0.6); }
+    @media (min-width: 768px) {
+      .box-reviews__item:hover .reviews-item {
+        -webkit-filter: blur(0);
+                filter: blur(0);
+        -webkit-transition: .6s;
+        transition: .6s; } }
+    @media (max-width: 768px) {
+      .box-reviews__item:hover .reviews-item {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transition: 0.3s;
+        transition: 0.3s; } }
 
 .box-reviews__photo {
   height: 100%;
@@ -1217,11 +1231,12 @@ p {
   background-position: center;
   -webkit-filter: grayscale(1);
           filter: grayscale(1); }
-  .box-reviews__item:hover .box-reviews__photo {
-    -webkit-transition: 1s;
-    transition: 1s;
-    -webkit-filter: grayscale(0);
-            filter: grayscale(0); }
+  @media (min-width: 768px) {
+    .box-reviews__item:hover .box-reviews__photo {
+      -webkit-transition: 1s;
+      transition: 1s;
+      -webkit-filter: grayscale(0);
+              filter: grayscale(0); } }
 
 .box-menu {
   background-image: url(../img/content/menu_bg.jpg);
