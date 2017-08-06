@@ -690,7 +690,8 @@ p {
         height: 100%; } }
     @media (max-width: 480px) {
       .content__img {
-        height: 16rem; } }
+        max-height: 16rem;
+        height: auto; } }
   .content__text {
     width: 50%;
     padding-top: 3.125rem;
@@ -732,6 +733,9 @@ p {
     font-size: 3.9375rem;
     font-weight: 500;
     line-height: 3.8125rem; }
+    @media (max-width: 320px) {
+      .content__text-body {
+        font-size: 3.4375rem; } }
   @media (max-width: 768px) {
     .content {
       -webkit-box-orient: vertical;

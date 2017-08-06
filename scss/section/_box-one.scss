@@ -208,8 +208,8 @@
     }
 
     @include media_480{
-      height: convert_rem(256px);
-
+      max-height: convert_rem(256px);
+      height: auto;
     }
   }
 
@@ -252,6 +252,10 @@
     font-size: convert_rem(63px);
     font-weight: 500;
     line-height: convert_rem(61px);
+
+    @include media_320 {
+      font-size:convert_rem(55px);
+    }
 
   }
 
