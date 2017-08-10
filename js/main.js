@@ -54,8 +54,9 @@ function init(){
 }
 
 
-var menu = document.getElementsByClassName('menu')[0];
+//open and close menu
 
+var menu = document.getElementsByClassName('menu')[0];
 
 var menuAccord = document.getElementsByClassName('menu__accord')[0];
     menuAccord.onclick = function (e) {
@@ -69,4 +70,3 @@ var menuAccord = document.getElementsByClassName('menu__accord')[0];
 
         }
     }
-console.log(menu);

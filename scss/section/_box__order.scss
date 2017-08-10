@@ -246,6 +246,7 @@ form {
   font-size: convert_rem(13px);
   font-weight: 500;
   border: none;
+  outline: none;
 
   &:hover {
     background-color: darken(#e45028, 5%);
@@ -260,6 +261,13 @@ form {
     cursor: pointer;
     font-size: convert_rem(13px);
     font-weight: 500;
+    transition: .3s;
+
+
+    &:hover {
+      color: $orange;
+      transition: .3s;
+    }
 
   }
 }
