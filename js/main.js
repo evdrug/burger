@@ -70,3 +70,16 @@ var menuAccord = document.getElementsByClassName('menu__accord')[0];
 
         }
     }
+
+
+var accordTeam = document.getElementsByClassName('team-accordeon__team');
+
+var accordLink  = document.getElementsByClassName('team-accordeon__link');
+    for( i = 0; i<accordLink.length; i++){
+        accordLink[i].onclick = function (e) {
+            e.preventDefault();
+        }
+    }
+
+var active = document.getElementsByClassName('team-accordeon__team_active');
+
