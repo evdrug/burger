@@ -54,11 +54,10 @@ function init(){
 }
 
 
-var menu = document.getElementsByClassName('menu');
-    menu = menu[0];
+var menu = document.getElementsByClassName('menu')[0];
 
-var menuAccord = document.getElementsByClassName('menu__accord');
-    menuAccord = menuAccord[0];
+
+var menuAccord = document.getElementsByClassName('menu__accord')[0];
     menuAccord.onclick = function (e) {
         e.preventDefault();
         var active =  menu.classList.value;
