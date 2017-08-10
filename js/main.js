@@ -52,3 +52,19 @@ function init(){
 
     myMap.geoObjects.add(myPlacemark) .add(myPlacemark2) .add(myPlacemark3);
 }
+
+var menu = document.getElementsByClassName('menu');
+    menu = menu[0];
+
+var menuAccord = document.getElementsByClassName('menu__accord');
+    menuAccord = menuAccord[0];
+    menuAccord.onclick = function (e) {
+        e.preventDefault();
+        var active =  menu.classList.value;
+        if (active.indexOf('menu_active')===-1){
+            menu.classList.add('menu_active');
+        }else {
+            menu.classList.remove('menu_active');
+        }
+    }
+console.log(menu);

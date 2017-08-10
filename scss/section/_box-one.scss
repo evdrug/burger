@@ -38,6 +38,7 @@
   background-image: url(../img/icons/logo.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 1;
 
 
 }
@@ -56,7 +57,7 @@
 
   &__order {
     @include btn(8px, 15px, 5px, #e45028);
-    z-index: 1;
+    //z-index: 1;
 
   }
 
@@ -65,10 +66,22 @@
     background-color: darken(#e45028, 5%);
   }
 
+
+
   @include media_768 {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(47,50,52,0.98);
+    margin-right:0;
   }
 
+  &_active {
+    display: block;
+  }
 
   &__accord{
     width: convert_rem(25px);
@@ -80,6 +93,8 @@
 
     @include media_768 {
       display: flex;
+      z-index: 1;
+
     }
 
   }
@@ -119,16 +134,35 @@
   display: inline-block;
   z-index: 10;
 
+  @include media_768 {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height: 100%;
+  }
+
   &__item {
     display: inline-block;
+
+    @include media_768 {
+      display: flex;
+      flex-direction: column;
+
+    }
+
   }
 
   &__item:before {
     content: '';
-    display: inline-block;
+    display: inline-flex;
     vertical-align: middle;
     @include circle(4px, #fff);
     margin: 0 convert_rem(15px) 0 convert_rem(13px);
+
+    @include media_768 {
+      margin: convert_rem(10px) auto ;
+    }
   }
 
   &__item:first-child:before {
@@ -167,7 +201,7 @@
   justify-content: center;
   align-items: center;
   margin-right: convert_rem(-29px);
-  z-index: 1;
+  //z-index: 1;
 
   @include media_768 {
     margin-right:0;
@@ -286,7 +320,7 @@
   border-top: none;
   border-right: none;
   transform: rotate(-45deg);
-  z-index: 1;
+  //z-index: 1;
   transition: .3s;
 }
 
