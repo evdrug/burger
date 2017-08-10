@@ -66,8 +66,7 @@ var menuAccord = document.getElementsByClassName('menu__accord')[0];
 
         }else {
             menu.classList.remove('menu_active');
-            document.onmousewheel = function (e) {
-            }
+
         }
     }
 console.log(menu);
