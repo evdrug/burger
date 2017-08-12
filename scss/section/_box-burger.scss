@@ -223,4 +223,8 @@
 .order-btn {
   @include btn(10px, 15px, 5px, #e45028);
   font-size: convert_rem(13px);
+
+  &:hover {
+    background-color: darken(#e45028, 5%);
+  }
 }

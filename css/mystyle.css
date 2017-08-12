@@ -1407,6 +1407,9 @@ non_scrole {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 0.8125rem; }
+  /* line 227, ../scss/section/_box-burger.scss */
+  .order-btn:hover {
+    background-color: #d7431b; }
 
 /* line 1, ../scss/section/_box_team.scss */
 .box-team {
