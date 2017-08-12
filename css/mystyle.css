@@ -1262,21 +1262,67 @@ non_scrole {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
-  /* line 97, ../scss/section/_box-burger.scss */
+          flex-direction: column;
+  cursor: pointer; }
+  /* line 99, ../scss/section/_box-burger.scss */
   .burger-ingredients__icon {
     width: 100%;
     height: 50%;
     fill: #fff; }
-  /* line 103, ../scss/section/_box-burger.scss */
+  /* line 105, ../scss/section/_box-burger.scss */
   .burger-ingredients__text {
     color: #fff;
     font-weight: 200;
     text-align: center;
     font-family: Gagalin;
     font-size: 0.875rem; }
+  /* line 113, ../scss/section/_box-burger.scss */
+  .burger-ingredients__table-wrapper {
+    position: absolute;
+    top: 0;
+    left: 5.625rem;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0.3125rem;
+    padding: 0;
+    -webkit-transition: 0.6s;
+    transition: 0.6s; }
+  /* line 130, ../scss/section/_box-burger.scss */
+  .burger-ingredients__table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+    /* line 136, ../scss/section/_box-burger.scss */
+    .burger-ingredients__table-cell:last-child {
+      text-align: right; }
+  /* line 141, ../scss/section/_box-burger.scss */
+  .burger-ingredients:hover {
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+    background-color: rgba(227, 80, 40, 0.7); }
+    /* line 145, ../scss/section/_box-burger.scss */
+    .burger-ingredients:hover .burger-ingredients__table-wrapper {
+      width: 16.875rem;
+      height: 20.75rem;
+      padding: 1.5625rem;
+      -webkit-transition: 0.6s;
+      transition: 0.6s; }
+      @media (max-width: 480px) {
+        /* line 145, ../scss/section/_box-burger.scss */
+        .burger-ingredients:hover .burger-ingredients__table-wrapper {
+          height: 23.875rem;
+          padding: 0.9375rem; } }
+    /* line 158, ../scss/section/_box-burger.scss */
+    .burger-ingredients:hover .burger-ingredients__table {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transition: .8s;
+      transition: .8s; }
 
-/* line 113, ../scss/section/_box-burger.scss */
+/* line 168, ../scss/section/_box-burger.scss */
 .burger-kcal {
   position: absolute;
   bottom: 0;
@@ -1293,18 +1339,18 @@ non_scrole {
           flex-direction: column;
   font-family: Gagalin; }
   @media (max-width: 768px) {
-    /* line 113, ../scss/section/_box-burger.scss */
+    /* line 168, ../scss/section/_box-burger.scss */
     .burger-kcal {
       top: 0;
       right: 0;
       left: auto; } }
-  /* line 131, ../scss/section/_box-burger.scss */
+  /* line 186, ../scss/section/_box-burger.scss */
   .burger-kcal__icon {
     position: relative;
     width: 100%;
     height: 80%;
     fill: #fff; }
-  /* line 138, ../scss/section/_box-burger.scss */
+  /* line 193, ../scss/section/_box-burger.scss */
   .burger-kcal__text {
     position: absolute;
     top: 50%;
@@ -1314,14 +1360,14 @@ non_scrole {
     color: #fff;
     margin-left: -25%;
     margin-top: -15%; }
-    /* line 148, ../scss/section/_box-burger.scss */
+    /* line 203, ../scss/section/_box-burger.scss */
     .burger-kcal__text-prefix {
       color: #fff;
       text-align: center;
       font-size: 1.25rem;
       line-height: 1; }
 
-/* line 157, ../scss/section/_box-burger.scss */
+/* line 212, ../scss/section/_box-burger.scss */
 .box-burger__title {
   color: #fff;
   font-family: Gagalin;
@@ -1331,17 +1377,17 @@ non_scrole {
   margin-bottom: 2.5rem;
   line-height: 4.0625rem; }
   @media (max-width: 768px) {
-    /* line 157, ../scss/section/_box-burger.scss */
+    /* line 212, ../scss/section/_box-burger.scss */
     .box-burger__title {
       margin-bottom: 1.875rem; } }
   @media (max-width: 480px) {
-    /* line 157, ../scss/section/_box-burger.scss */
+    /* line 212, ../scss/section/_box-burger.scss */
     .box-burger__title {
       font-size: 3.125rem;
       margin-bottom: 0.625rem;
       line-height: 1; } }
 
-/* line 175, ../scss/section/_box-burger.scss */
+/* line 230, ../scss/section/_box-burger.scss */
 .box-burger__text {
   color: #fff;
   font-size: 14px;
@@ -1349,7 +1395,7 @@ non_scrole {
   margin-bottom: 1.25rem;
   line-height: 1.5rem; }
 
-/* line 186, ../scss/section/_box-burger.scss */
+/* line 241, ../scss/section/_box-burger.scss */
 .box-border__order {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1358,18 +1404,18 @@ non_scrole {
       -ms-flex-align: end;
           align-items: flex-end; }
   @media (max-width: 768px) {
-    /* line 186, ../scss/section/_box-burger.scss */
+    /* line 241, ../scss/section/_box-burger.scss */
     .box-border__order {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center; } }
 
-/* line 197, ../scss/section/_box-burger.scss */
+/* line 252, ../scss/section/_box-burger.scss */
 .order-text {
   display: inline-block;
   line-height: 1;
   margin-right: 1.875rem; }
-  /* line 203, ../scss/section/_box-burger.scss */
+  /* line 258, ../scss/section/_box-burger.scss */
   .order-text__amount {
     display: inline-block;
     color: #e35028;
@@ -1379,10 +1425,10 @@ non_scrole {
     margin: 0;
     margin-bottom: 0rem; }
     @media (max-width: 480px) {
-      /* line 203, ../scss/section/_box-burger.scss */
+      /* line 258, ../scss/section/_box-burger.scss */
       .order-text__amount {
         font-size: 3.125rem; } }
-  /* line 211, ../scss/section/_box-burger.scss */
+  /* line 266, ../scss/section/_box-burger.scss */
   .order-text__currency {
     display: inline-block;
     color: #e35028;
@@ -1393,11 +1439,11 @@ non_scrole {
     margin-bottom: 0rem;
     font-size: 1.875rem; }
     @media (max-width: 480px) {
-      /* line 211, ../scss/section/_box-burger.scss */
+      /* line 266, ../scss/section/_box-burger.scss */
       .order-text__currency {
         font-size: 1.5rem; } }
 
-/* line 223, ../scss/section/_box-burger.scss */
+/* line 278, ../scss/section/_box-burger.scss */
 .order-btn {
   padding: 0.625rem 0.9375rem;
   border-radius: 0.3125rem;
@@ -1407,7 +1453,7 @@ non_scrole {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 0.8125rem; }
-  /* line 227, ../scss/section/_box-burger.scss */
+  /* line 282, ../scss/section/_box-burger.scss */
   .order-btn:hover {
     background-color: #d7431b; }
 
