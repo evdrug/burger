@@ -1038,10 +1038,16 @@ non_scrole {
 .box-burger__back-icon {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg); }
+  .box-burger__back-icon:hover {
+    -webkit-transform: rotate(90deg) scale(1.2);
+            transform: rotate(90deg) scale(1.2); }
 
 .box-burger__forward-icon {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg); }
+  .box-burger__forward-icon:hover {
+    -webkit-transform: rotate(-90deg) scale(1.2);
+            transform: rotate(-90deg) scale(1.2); }
 
 .box-burger__left, .box-burger__right {
   -webkit-box-flex: 1;
