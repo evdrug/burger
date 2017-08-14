@@ -86,6 +86,8 @@ var menuAccord = document.getElementsByClassName('menu__accord')[0];
 
 $(document).ready(function () {
 
+    //аккардеон команды
+
     var teamLink = $('.team-accordeon__link'),
         menuLink = $('.box-menu__link');
 
@@ -95,17 +97,17 @@ $(document).ready(function () {
         var teamBlock = $(e.target).closest('.team-accordeon__team'),
             teamBlockAll = $('.team-accordeon__team');
 
-
         if( teamBlock.hasClass('team-accordeon__team_active')){
             teamBlock.removeClass('team-accordeon__team_active');
         } else {
             teamBlockAll.removeClass('team-accordeon__team_active');
             teamBlock.addClass('team-accordeon__team_active');
-
         }
 
     });
 
+
+    //аккардеон меню
 
     menuLink.on('click',function (e) {
         e.preventDefault();
@@ -113,16 +115,50 @@ $(document).ready(function () {
         var menuBlock = $(e.target).closest('.box-menu__item'),
             menuBlockAll = $('.box-menu__item');
 
-
         if( menuBlock.hasClass('box-menu__item_active')){
             menuBlock.removeClass('box-menu__item_active');
         } else {
             menuBlockAll.removeClass('box-menu__item_active');
             menuBlock.addClass('box-menu__item_active');
         }
+    });
+
+
+    //слайдер
+
+
+    function slider(wrapper,numb) {
+
+
+
+    }
+
+
+
+    $('.box-burger__forward').on('click', function (e) {
+        btnForward = e.target;
+
+
+        var sliderWrapper = $('.box-burger__wrapper'),
+            sliderList = sliderWrapper.find('.box-burger__list'),
+            sliderItem = sliderWrapper.find('.box-burger__item'),
+            sliderActive = sliderItem.filter('.box-burger__item_active'),
+            nextItem = sliderActive.next(),
+            numberItem = nextItem.index(),
+            slideTime = 1000;
+
+        var next = -numberItem*100 +'%';
+        console.log(nextItem);
+
+        sliderList.animate({
+            'left' : next
+        },slideTime, function () {
+            sliderActive.removeClass('box-burger__item_active');
+            nextItem.addClass('box-burger__item_active');
+        });
 
     });
 
 
 
-})
+});
