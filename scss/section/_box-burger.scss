@@ -8,7 +8,7 @@
 }
 
 .box-burger__back,.box-burger__forward {
-  width: convert_rem(65px);
+  width: convert_rem(35px);
   height: convert_rem(35px);
   cursor: pointer;
 
@@ -23,16 +23,22 @@
 
 .box-burger__back-icon {
   transform: rotate(90deg);
+  transition: .3s;
+
   &:hover {
     transform: rotate(90deg) scale(1.2);
+    transition: .3s;
   }
 }
 
 .box-burger__forward-icon {
   transform: rotate(-90deg);
+  transition: .3s;
 
   &:hover {
     transform: rotate(-90deg) scale(1.2);
+    transition: .3s;
+
   }
 }
 
@@ -73,7 +79,30 @@
 }
 
 .box-burger__wrapper {
-  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+}
+
+.box-burger__list {
+  white-space: nowrap;
+  width: 100%;
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -25%;
+  left: 0;
+
+
+
+
+}
+
+.box-burger__item {
+  white-space: normal;
+  display: inline-flex;
   position: relative;
   padding-bottom:convert_rem(90px);
 
@@ -86,6 +115,7 @@
   }
 
 }
+
 
 .burger-ingredients{
   position: absolute;
@@ -128,6 +158,8 @@
     border-radius: convert_rem(5px);
     padding: 0;
     transition: 0.6s;
+    font-size: convert_rem(14px);
+
 
     @include media_480 {
 
