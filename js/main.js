@@ -127,38 +127,62 @@ $(document).ready(function () {
     //слайдер
 
 
-    function slider(wrapper,numb) {
-
-
-
-    }
-
-
-
-    $('.box-burger__forward').on('click', function (e) {
-        btnForward = e.target;
-
+    function slider(test) {
 
         var sliderWrapper = $('.box-burger__wrapper'),
             sliderList = sliderWrapper.find('.box-burger__list'),
             sliderItem = sliderWrapper.find('.box-burger__item'),
             sliderActive = sliderItem.filter('.box-burger__item_active'),
             nextItem = sliderActive.next(),
-            numberItem = nextItem.index(),
+            nextNumberItem = nextItem.index(),
+            backItem = sliderActive.prev(),
+            backNumberItem = backItem.index(),
+
             slideTime = 1000;
 
-        var next = -numberItem*100 +'%';
-        console.log(nextItem);
 
-        sliderList.animate({
-            'left' : next
-        },slideTime, function () {
-            sliderActive.removeClass('box-burger__item_active');
-            nextItem.addClass('box-burger__item_active');
-        });
 
+        if(test == 'next') {
+
+            if(!nextItem.length){
+                nextItem = sliderItem.eq(0);
+                nextNumberItem = 0;
+            }
+            var next = -nextNumberItem*100 +'%';
+            sliderList.stop(true).animate({
+                'left' : next
+            },slideTime, function () {
+                sliderActive.removeClass('box-burger__item_active');
+                nextItem.addClass('box-burger__item_active');
+            });
+        }
+
+        if (test == 'back') {
+
+            if(!backItem.length){
+                backItem = sliderItem.eq(sliderItem.length-1);
+                backNumberItem = sliderItem.length-1;
+            }
+            var back = -backNumberItem*100 +'%';
+
+            sliderList.stop(true).animate({
+                'left' : back
+            },slideTime, function () {
+                sliderActive.removeClass('box-burger__item_active');
+                backItem.addClass('box-burger__item_active');
+            });
+        }
+    }
+
+
+
+    $('.box-burger__forward').on('click', function (e) {
+        btnForward = e.target;
+        slider('next');
     });
 
-
-
+    $('.box-burger__back').on('click', function (e) {
+        btnForward = e.target;
+        slider('back');
+    });
 });
