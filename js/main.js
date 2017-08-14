@@ -72,14 +72,57 @@ var menuAccord = document.getElementsByClassName('menu__accord')[0];
     }
 
 
-var accordTeam = document.getElementsByClassName('team-accordeon__team');
+// var accordTeam = document.getElementsByClassName('team-accordeon__team');
+//
+// var accordLink  = document.getElementsByClassName('team-accordeon__link');
+//     for( i = 0; i<accordLink.length; i++){
+//         accordLink[i].onclick = function (e) {
+//             e.preventDefault();
+//         }
+//     }
+//
+// var active = document.getElementsByClassName('team-accordeon__team_active');
 
-var accordLink  = document.getElementsByClassName('team-accordeon__link');
-    for( i = 0; i<accordLink.length; i++){
-        accordLink[i].onclick = function (e) {
-            e.preventDefault();
+
+$(document).ready(function () {
+
+    var teamLink = $('.team-accordeon__link'),
+        menuLink = $('.box-menu__link');
+
+    teamLink.on('click',function (e) {
+        e.preventDefault();
+
+        var teamBlock = $(e.target).closest('.team-accordeon__team'),
+            teamBlockAll = $('.team-accordeon__team');
+
+
+        if( teamBlock.hasClass('team-accordeon__team_active')){
+            teamBlock.removeClass('team-accordeon__team_active');
+        } else {
+            teamBlockAll.removeClass('team-accordeon__team_active');
+            teamBlock.addClass('team-accordeon__team_active');
+
         }
-    }
 
-var active = document.getElementsByClassName('team-accordeon__team_active');
+    });
 
+
+    menuLink.on('click',function (e) {
+        e.preventDefault();
+
+        var menuBlock = $(e.target).closest('.box-menu__item'),
+            menuBlockAll = $('.box-menu__item');
+
+
+        if( menuBlock.hasClass('box-menu__item_active')){
+            menuBlock.removeClass('box-menu__item_active');
+        } else {
+            menuBlockAll.removeClass('box-menu__item_active');
+            menuBlock.addClass('box-menu__item_active');
+        }
+
+    });
+
+
+
+})
