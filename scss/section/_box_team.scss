@@ -53,6 +53,7 @@
     font-weight: 400;
     text-decoration: none;
     color: #fff;
+    transition: 0.8s;
     margin-bottom: convert_rem(15px);
     position: relative;
 
@@ -101,6 +102,7 @@
     margin-bottom: convert_rem(37px);
 
     .team-accordeon__link {
+      transition: 0.8s;
       color: #f9b43b;
       &:before {
         bottom: convert_rem(6px);
