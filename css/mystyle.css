@@ -2171,7 +2171,6 @@ form {
   cursor: default; }
 
 .modal-overlay {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -2179,6 +2178,8 @@ form {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.85);
   opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   z-index: 90; }
@@ -2218,14 +2219,22 @@ form {
     position: absolute;
     left: 0.625rem;
     height: 1.5625rem;
-    width: 0.125rem;
-    background-color: #e35028; }
+    width: 0.1875rem;
+    background-color: #e35028;
+    border-radius: 3px;
+    opacity: .7; }
   .modal__close:before {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg); }
   .modal__close:after {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg); }
+  .modal__close:hover:before {
+    content: '';
+    opacity: 1; }
+  .modal__close:hover:after {
+    content: '';
+    opacity: 1; }
 
 .modal__text {
   width: 100%;

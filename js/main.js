@@ -270,7 +270,7 @@ $(document).ready(function () {
         var itemName = $(e.target).siblings('.reviews-item__name').text(),
             itemComment = $(e.target).siblings('.reviews-item__comment').text();
 
-        modal.css({"display":"block", "opacity":"1", "transition":"10s"});
+        modal.css({ "opacity":"1", "transition":".5s","transform": "scale(1)"});
         var text = '<div class="modal__name">'+itemName+'</div><div class="modal__comment">'+itemComment+'</div>';
 
         var modalText = $('.modal__text');
@@ -286,7 +286,7 @@ $(document).ready(function () {
     var modalClose = $('.modal__close');
 
     modalClose.on('click', function () {
-        modal.css('display', 'none');
+        modal.css( {"opacity":"0", "transition":".5s","transform": "scale(0)"});
         flag = true;
     });
 
