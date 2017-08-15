@@ -79,12 +79,17 @@
     }
   }
 
-  &__info {
-    display: flex;
-    margin-bottom: convert_rem(10px);
+  &__container {
     height: 0;
     overflow: hidden;
     transition: 0.8s;
+
+
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: convert_rem(10px);
 
     @include media_768 {
       justify-content: center;
@@ -115,17 +120,6 @@
         }
       }
     }
-
-    .team-accordeon__info {
-      transition: 0.8s;
-      height: convert_rem(100px);
-      //height: auto;
-      @include media_768 {
-        height: convert_rem(200px);
-      }
-
-    }
-
 
   }
 
