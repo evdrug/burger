@@ -461,10 +461,15 @@ body {
 
 .wrapper {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 .mycontent {
-  height: 100%; }
+  position: relative;
+  height: 100%;
+  top: 0%;
+  -webkit-transition: top 1s;
+  transition: top 1s; }
 
 .box {
   position: relative;
