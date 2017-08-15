@@ -475,6 +475,7 @@ body {
   position: relative;
   height: 100%;
   min-height: 40.625rem;
+  min-width: 320px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2168,5 +2169,79 @@ form {
   margin-left: -0.5rem;
   margin-top: -0.5rem;
   cursor: default; }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 90; }
+
+.modal {
+  position: absolute;
+  display: inline-block;
+  width: 50%;
+  height: 40%;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 100; }
+  @media (max-width: 768px) {
+    .modal {
+      width: 60%; } }
+  @media (max-width: 480px) {
+    .modal {
+      width: 70%; } }
+  @media (max-width: 320px) {
+    .modal {
+      width: 80%; } }
+
+.modal__close {
+  position: absolute;
+  right: 0.625rem;
+  top: 0.4375rem;
+  cursor: pointer;
+  width: 1.5625rem;
+  height: 1.5625rem; }
+  .modal__close:before, .modal__close:after {
+    content: '';
+    position: absolute;
+    left: 0.625rem;
+    height: 1.5625rem;
+    width: 0.125rem;
+    background-color: #e35028; }
+  .modal__close:before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .modal__close:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+
+.modal__text {
+  width: 100%;
+  padding: 1.25rem; }
+
+.modal__name {
+  font-family: Gagalin;
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-bottom: 0.625rem;
+  text-align: center; }
+
+.modal__comment {
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  padding-bottom: 1.25rem; }
 
 /*# sourceMappingURL=mystyle.css.map */

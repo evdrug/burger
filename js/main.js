@@ -54,6 +54,71 @@ function init(){
 }
 
 
+// скролл
+
+var pointLink = $('.point__link'),
+    pointsItem = $('.points__item'),
+    mycontent = $('.mycontent');
+
+
+var section = 0,
+    box = $('.box'),
+    flag = true;
+
+box.first().addClass('p_active');
+
+$('body').on('mousewheel', function (e) {
+    var activeBox = box.filter('.p_active'),
+        activeBoxNumb = activeBox.index();
+
+    if (flag) {
+        flag = false;
+
+        if(e.deltaY > 0) {
+            if(activeBox.prev().length) section = activeBoxNumb-1;
+        }else {
+            if(activeBox.next().length)  section = activeBoxNumb+1;
+        }
+
+        var position = -section*100+'%';
+        mycontent.css('top', position);
+        box.eq(section).addClass('p_active')
+            .siblings().removeClass('p_active');
+        setTimeout( function () {
+            flag = true;
+        }, 1300);
+
+        pointsItem.eq(section).addClass('points__item_active')
+            .siblings().removeClass('points__item_active');
+    }
+});
+
+
+
+
+
+
+function scroll(items) {
+    var nextPage = -items.index()*100+'%';
+    mycontent.css('top',nextPage).animate;
+    pointsItem.removeClass('points__item_active');
+    items.addClass('points__item_active');
+}
+
+pointLink.on('click', function (e) {
+    e.preventDefault();
+    var items = $(e.target).closest('.points__item');
+    scroll(items);
+    box.eq(items.index()).addClass('p_active')
+        .siblings().removeClass('p_active');
+
+})
+
+
+
+
+
+
 //open and close menu
 
 var menu = document.getElementsByClassName('menu')[0];
@@ -64,10 +129,11 @@ var menuAccord = document.getElementsByClassName('menu__accord')[0];
         var active =  menu.classList.value;
         if (active.indexOf('menu_active')===-1){
             menu.classList.add('menu_active');
+            flag = false;
 
         }else {
             menu.classList.remove('menu_active');
-
+            flag = true;
         }
     }
 
@@ -191,62 +257,38 @@ $(document).ready(function () {
 
 
 
-    // скролл
 
-    var pointLink = $('.point__link'),
-        pointsItem = $('.points__item'),
-        mycontent = $('.mycontent');
+    //модальное окно
 
 
-    var section = 0,
-        box = $('.box'),
-        flag = true;
+    var item = $('.reviews-item__link'),
+        modal = $('.modal-overlay');
 
-    box.first().addClass('p_active');
+    item.on('click', function (e) {
+       e.preventDefault();
 
-    $('body').on('mousewheel', function (e) {
-        var activeBox = box.filter('.p_active'),
-            activeBoxNumb = activeBox.index();
+        var itemName = $(e.target).siblings('.reviews-item__name').text(),
+            itemComment = $(e.target).siblings('.reviews-item__comment').text();
 
-        if (flag) {
-            flag = false;
+        modal.css({"display":"block", "opacity":"1", "transition":"10s"});
+        var text = '<div class="modal__name">'+itemName+'</div><div class="modal__comment">'+itemComment+'</div>';
 
-            if(e.deltaY > 0) {
-                if(activeBox.prev().length) section = activeBoxNumb-1;
-            }else {
-                if(activeBox.next().length)  section = activeBoxNumb+1;
-            }
+        var modalText = $('.modal__text');
+        modalText.html(text);
 
-            var position = -section*100+'%';
-            mycontent.css('top', position);
-            box.eq(section).addClass('p_active')
-                .siblings().removeClass('p_active');
-            setTimeout( function () {
-                 flag = true;
-            }, 1300);
+        var heightModal = $('.modal__text').height(),
+        heightModalFull = (+heightModal + 20) +'px';
+        $('.modal').css('height',heightModalFull);
+        flag = false;
 
-            pointsItem.eq(section).addClass('points__item_active')
-                    .siblings().removeClass('points__item_active');
-        }
     });
 
+    var modalClose = $('.modal__close');
 
+    modalClose.on('click', function () {
+        modal.css('display', 'none');
+        flag = true;
+    });
 
-
-    function scroll(items) {
-        var nextPage = -items.index()*100+'%';
-        mycontent.css('top',nextPage).animate;
-        pointsItem.removeClass('points__item_active');
-        items.addClass('points__item_active');
-    }
-
-    pointLink.on('click', function (e) {
-        e.preventDefault();
-        var items = $(e.target).closest('.points__item');
-        scroll(items);
-        box.eq(items.index()).addClass('p_active')
-            .siblings().removeClass('p_active');
-
-    })
 
 });
