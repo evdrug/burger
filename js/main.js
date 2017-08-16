@@ -1,7 +1,7 @@
 ymaps.ready(init);
 var myMap;
 
-function init(){
+function init() {
     myMap = new ymaps.Map("map", {
         center: [59.88, 30.54],
         zoom: 11,
@@ -11,7 +11,7 @@ function init(){
     myPlacemark = new ymaps.Placemark([59.88, 30.54], {
         hintContent: 'CПБ!',
         balloonContent: 'Мы тут :)'
-    },{
+    }, {
         // Опции.
         // Необходимо указать данный тип макета.
         iconLayout: 'default#image',
@@ -24,7 +24,7 @@ function init(){
     myPlacemark2 = new ymaps.Placemark([59.89, 30.25], {
         hintContent: 'CПБ!',
         balloonContent: 'Мы тут :)'
-    },{
+    }, {
         // Опции.
         // Необходимо указать данный тип макета.
         iconLayout: 'default#image',
@@ -37,7 +37,7 @@ function init(){
     myPlacemark3 = new ymaps.Placemark([59.91, 30.45], {
         hintContent: 'CПБ!',
         balloonContent: 'Мы тут :)'
-    },{
+    }, {
         // Опции.
         // Необходимо указать данный тип макета.
         iconLayout: 'default#image',
@@ -49,13 +49,13 @@ function init(){
     });
 
 
-
-    myMap.geoObjects.add(myPlacemark) .add(myPlacemark2) .add(myPlacemark3);
+    myMap.geoObjects.add(myPlacemark).add(myPlacemark2).add(myPlacemark3);
 }
 
 
-    // скролл
+// скролл
 
+var flag = true;
 
 $(document).ready(function () {
     var pointLink = $('.point__link'),
@@ -64,61 +64,85 @@ $(document).ready(function () {
 
 
     var section = 0,
-        box = $('.box'),
-        flag = true;
+        box = $('.box');
 
     box.first().addClass('p_active');
 
-    // $('body').on('mousewheel', function (e) {
-    //     var activeBox = box.filter('.p_active'),
-    //         activeBoxNumb = activeBox.index();
-    //
-    //     if (flag) {
-    //         flag = false;
-    //
-    //         if(e.deltaY > 0) {
-    //             if(activeBox.prev().length) section = activeBoxNumb-1;
-    //         }else {
-    //             if(activeBox.next().length)  section = activeBoxNumb+1;
-    //         }
-    //
-    //         var position = -section*100+'%';
-    //         mycontent.css('top', position);
-    //         box.eq(section).addClass('p_active')
-    //             .siblings().removeClass('p_active');
-    //         setTimeout( function () {
-    //             flag = true;
-    //         }, 1300);
-    //
-    //         pointsItem.eq(section).addClass('points__item_active')
-    //             .siblings().removeClass('points__item_active');
-    //     }
-    // });
+    function posActive(section) {
+
+        var position = -section * 100 + '%';
+        mycontent.css('top', position);
+        box.eq(section).addClass('p_active')
+            .siblings().removeClass('p_active');
+        setTimeout(function () {
+            flag = true;
+        }, 1300);
+
+        pointsItem.eq(section).addClass('points__item_active')
+            .siblings().removeClass('points__item_active');
+    };
+
+
+    $('body').on('mousewheel', function (e) {
+        var activeBox = box.filter('.p_active'),
+            activeBoxNumb = activeBox.index();
+
+        if (flag) {
+            flag = false;
+
+            if (e.deltaY > 0) {
+                if (activeBox.prev().length) section = activeBoxNumb - 1;
+            } else {
+                if (activeBox.next().length) section = activeBoxNumb + 1;
+            }
+
+            posActive(section);
+        }
+    });
+
+
+    $('body').swipe({
+        swipe: function (event, direction) {
+            console.log(direction);
+
+        var activeBox = box.filter('.p_active'),
+            activeBoxNumb = activeBox.index();
+
+
+        if (flag) {
+            flag = false;
+
+            if (direction == 'down' || direction == 'right') {
+                if (activeBox.prev().length) section = activeBoxNumb - 1;
+            } else {
+                if (activeBox.next().length) section = activeBoxNumb + 1;
+            }
+
+            posActive(section);
+        }
+    }
+
+    });
+
+
+    function scroll(items) {
+        var nextPage = -items.index() * 100 + '%';
+        mycontent.css('top', nextPage).animate;
+        pointsItem.removeClass('points__item_active');
+        items.addClass('points__item_active');
+    };
+
+    pointLink.on('click', function (e) {
+        e.preventDefault();
+        var items = $(e.target).closest('.points__item');
+        scroll(items);
+        box.eq(items.index()).addClass('p_active')
+            .siblings().removeClass('p_active');
+
+    })
+
 
 });
-
-
-
-//
-// function scroll(items) {
-//     var nextPage = -items.index()*100+'%';
-//     mycontent.css('top',nextPage).animate;
-//     pointsItem.removeClass('points__item_active');
-//     items.addClass('points__item_active');
-// }
-//
-// pointLink.on('click', function (e) {
-//     e.preventDefault();
-//     var items = $(e.target).closest('.points__item');
-//     scroll(items);
-//     box.eq(items.index()).addClass('p_active')
-//         .siblings().removeClass('p_active');
-//
-// })
-
-
-
-
 
 
 //open and close menu
@@ -126,18 +150,18 @@ $(document).ready(function () {
 var menu = document.getElementsByClassName('menu')[0];
 
 var menuAccord = document.getElementsByClassName('menu__accord')[0];
-    menuAccord.onclick = function (e) {
-        e.preventDefault();
-        var active =  menu.classList.value;
-        if (active.indexOf('menu_active')===-1){
-            menu.classList.add('menu_active');
-            flag = false;
+menuAccord.onclick = function (e) {
+    e.preventDefault();
+    var active = menu.classList.value;
+    if (active.indexOf('menu_active') === -1) {
+        menu.classList.add('menu_active');
+        flag = false;
 
-        }else {
-            menu.classList.remove('menu_active');
-            flag = true;
-        }
+    } else {
+        menu.classList.remove('menu_active');
+        flag = true;
     }
+}
 
 
 // var accordTeam = document.getElementsByClassName('team-accordeon__team');
@@ -159,7 +183,7 @@ $(document).ready(function () {
     var teamLink = $('.team-accordeon__link'),
         menuLink = $('.box-menu__link');
 
-    teamLink.on('click',function (e) {
+    teamLink.on('click', function (e) {
         e.preventDefault();
 
         var container = $(e.target).siblings(),
@@ -169,7 +193,7 @@ $(document).ready(function () {
             teamBlockAll = $('.team-accordeon__team');
 
 
-        if( teamBlock.hasClass('team-accordeon__team_active')){
+        if (teamBlock.hasClass('team-accordeon__team_active')) {
             teamBlock.children('.team-accordeon__container').css('height', '0');
             teamBlock.removeClass('team-accordeon__team_active');
         } else {
@@ -184,13 +208,13 @@ $(document).ready(function () {
 
     //аккардеон меню
 
-    menuLink.on('click',function (e) {
+    menuLink.on('click', function (e) {
         e.preventDefault();
 
         var menuBlock = $(e.target).closest('.box-menu__item'),
             menuBlockAll = $('.box-menu__item');
 
-        if( menuBlock.hasClass('box-menu__item_active')){
+        if (menuBlock.hasClass('box-menu__item_active')) {
             menuBlock.removeClass('box-menu__item_active');
         } else {
             menuBlockAll.removeClass('box-menu__item_active');
@@ -215,17 +239,16 @@ $(document).ready(function () {
             slideTime = 700;
 
 
+        if (test == 'next') {
 
-        if(test == 'next') {
-
-            if(!nextItem.length){
+            if (!nextItem.length) {
                 nextItem = sliderItem.first();
                 nextNumberItem = nextItem.index();
             }
-            var next = -nextNumberItem*100 +'%';
+            var next = -nextNumberItem * 100 + '%';
             sliderList.stop(true).animate({
-                'left' : next
-            },slideTime, function () {
+                'left': next
+            }, slideTime, function () {
                 sliderActive.removeClass('box-burger__item_active');
                 nextItem.addClass('box-burger__item_active');
             });
@@ -233,15 +256,15 @@ $(document).ready(function () {
 
         if (test == 'back') {
 
-            if(!backItem.length){
+            if (!backItem.length) {
                 backItem = sliderItem.last();
                 backNumberItem = backItem.index();
             }
-            var back = -backNumberItem*100 +'%';
+            var back = -backNumberItem * 100 + '%';
 
             sliderList.stop(true).animate({
-                'left' : back
-            },slideTime, function () {
+                'left': back
+            }, slideTime, function () {
                 sliderActive.removeClass('box-burger__item_active');
                 backItem.addClass('box-burger__item_active');
             });
@@ -258,8 +281,6 @@ $(document).ready(function () {
     });
 
 
-
-
     //модальное окно
 
 
@@ -267,20 +288,20 @@ $(document).ready(function () {
         modal = $('.modal-overlay');
 
     item.on('click', function (e) {
-       e.preventDefault();
+        e.preventDefault();
 
         var itemName = $(e.target).siblings('.reviews-item__name').text(),
             itemComment = $(e.target).siblings('.reviews-item__comment').text();
 
-        modal.css({ "opacity":"1", "transition":".5s","transform": "scale(1)"});
-        var text = '<div class="modal__name">'+itemName+'</div><div class="modal__comment">'+itemComment+'</div>';
+        modal.css({"opacity": "1", "transition": ".5s", "transform": "scale(1)"});
+        var text = '<div class="modal__name">' + itemName + '</div><div class="modal__comment">' + itemComment + '</div>';
 
         var modalText = $('.modal__text');
         modalText.html(text);
 
         var heightModal = $('.modal__text').height(),
-        heightModalFull = (+heightModal + 20) +'px';
-        $('.modal').css('height',heightModalFull);
+            heightModalFull = (+heightModal + 20) + 'px';
+        $('.modal').css('height', heightModalFull);
         flag = false;
 
     });
@@ -288,15 +309,15 @@ $(document).ready(function () {
     var modalClose = $('.modal__close');
 
     modalClose.on('click', function () {
-        modal.css( {"opacity":"0", "transition":".5s","transform": "scale(0)"});
+        modal.css({"opacity": "0", "transition": ".5s", "transform": "scale(0)"});
         flag = true;
     });
 
 
     // fullpage
-
-    $('.mycontent').onepage_scroll({
-        loop: false
-    })
+    //
+    // $('.mycontent').onepage_scroll({
+    //     loop: false
+    // })
 
 });
