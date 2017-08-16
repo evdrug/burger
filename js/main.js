@@ -102,7 +102,7 @@ $(document).ready(function () {
 
 
     $('body').swipe({
-        swipe: function (event, direction) {
+        swipe: function (event, direction, distance, duration, fingerCount) {
             console.log(direction);
 
         var activeBox = box.filter('.p_active'),
@@ -112,9 +112,10 @@ $(document).ready(function () {
         if (flag) {
             flag = false;
 
-            if (direction == 'down' || direction == 'right') {
+            if (direction == 'down' || direction == 'right' && distance == 75) {
                 if (activeBox.prev().length) section = activeBoxNumb - 1;
-            } else {
+            }
+             if(direction == 'up' || direction == 'left' && distance == 75){
                 if (activeBox.next().length) section = activeBoxNumb + 1;
             }
 
