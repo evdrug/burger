@@ -124,6 +124,30 @@ $(document).ready(function () {
 
     });
 
+    $('.menu-nav__link').on('click', function (e) {
+            e.preventDefault();
+            var link = $(e.target).attr('href'),
+                pos = link.substr(1);
+            $('.menu_active').removeClass('menu_active');
+            posActive(pos);
+
+        });
+
+    $('.box-one__next').on('click', function (e) {
+        e.preventDefault();
+        posActive(1);
+    });
+    $('.menu__order').on('click', function (e) {
+        e.preventDefault();
+        posActive(6);
+    }) ;
+    $('.order-btn').on('click', function (e) {
+        e.preventDefault();
+        posActive(6);
+    });
+
+
+
 
     function scroll(items) {
         var nextPage = -items.index() * 100 + '%';
