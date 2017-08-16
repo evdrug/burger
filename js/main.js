@@ -100,30 +100,33 @@ $(document).ready(function () {
         }
     });
 
+    if(!device.desktop()){
 
-    $('body').swipe({
-        swipe: function (event, direction, distance, duration, fingerCount) {
-            console.log(direction);
+        $('body').swipe({
+            swipe: function (event, direction, distance, duration, fingerCount) {
+                console.log(direction);
 
-        var activeBox = box.filter('.p_active'),
-            activeBoxNumb = activeBox.index();
+                var activeBox = box.filter('.p_active'),
+                    activeBoxNumb = activeBox.index();
 
 
-        if (flag) {
-            flag = false;
+                if (flag) {
+                    flag = false;
 
-            if (direction == 'down' || direction == 'right' && distance == 75) {
-                if (activeBox.prev().length) section = activeBoxNumb - 1;
+                    if (direction == 'down' || direction == 'right' && distance == 75) {
+                        if (activeBox.prev().length) section = activeBoxNumb - 1;
+                    }
+                    if(direction == 'up' || direction == 'left' && distance == 75){
+                        if (activeBox.next().length) section = activeBoxNumb + 1;
+                    }
+
+                    posActive(section);
+                }
             }
-             if(direction == 'up' || direction == 'left' && distance == 75){
-                if (activeBox.next().length) section = activeBoxNumb + 1;
-            }
 
-            posActive(section);
-        }
+        });
     }
 
-    });
 
     $('.menu-nav__link').on('click', function (e) {
             e.preventDefault();
