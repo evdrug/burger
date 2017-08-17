@@ -357,7 +357,10 @@ $(document).ready(function () {
             type: 'POST',
             url: action,
             data: data,
-            dataType: 'JSON'
+            dataType: 'JSON',
+            success: function(msg){
+                alert( "Data Saved: " + msg );
+            }
         });
     }
 
@@ -367,11 +370,13 @@ $(document).ready(function () {
         var form = $(e.target),
             request = ajaxForm(form);
 
-        request.done(function (msg) {
-            alert(msg);
+        console.log(request);
 
-        });
-
+        if(request.abort()){
+            console.log("abort");
+        } else {
+            console.log("zzzzz");
+        }
 
     })
 
