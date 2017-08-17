@@ -313,7 +313,8 @@ $(document).ready(function () {
 
 
     var item = $('.reviews-item__link'),
-        modal = $('.modal-overlay');
+        modal = $('.modal-overlay'),
+        modalText = $('.modal__text');
 
     item.on('click', function (e) {
         e.preventDefault();
@@ -324,7 +325,6 @@ $(document).ready(function () {
         modal.css({"opacity": "1", "transition": ".5s", "transform": "scale(1)"});
         var text = '<div class="modal__name">' + itemName + '</div><div class="modal__comment">' + itemComment + '</div>';
 
-        var modalText = $('.modal__text');
         modalText.html(text);
 
         var heightModal = $('.modal__text').height(),
@@ -357,10 +357,7 @@ $(document).ready(function () {
             type: 'POST',
             url: action,
             data: data,
-            dataType: 'JSON',
-            success: function(msg){
-                alert( "Data Saved: " + msg );
-            }
+            dataType: 'JSON'
         });
     }
 
@@ -370,13 +367,14 @@ $(document).ready(function () {
         var form = $(e.target),
             request = ajaxForm(form);
 
-        console.log(request);
+            request.done(function (e) {
+                modal.css({"opacity": "1", "transition": ".5s", "transform": "scale(1)"});
+                modalText.html(e.message);
+                var heightModal = $('.modal__text').height(),
+                    heightModalFull = (+heightModal + 40) + 'px';
+                $('.modal').css('height', heightModalFull);
 
-        if(request.abort()){
-            console.log("abort");
-        } else {
-            console.log("zzzzz");
-        }
+            })
 
     })
 
