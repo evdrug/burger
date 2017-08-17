@@ -25,7 +25,7 @@ body {
   display: flex;
   overflow: hidden;
   @include media_480 {
-    min-height: convert_rem(500px);
+    //min-height: convert_rem(500px);
   }
 }
 
