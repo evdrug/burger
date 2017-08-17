@@ -131,6 +131,7 @@ form {
     background-color: #ffffff;
     border: convert_rem(2px) solid transparent;
 
+
     &:focus {
       border: convert_rem(2px) solid #f9b43b;
       box-shadow: 0 0 convert_rem(5px) rgba(249, 180, 59, 0.7);
@@ -147,6 +148,7 @@ form {
     background-color: #ffffff;
     resize: none;
     margin-bottom: convert_rem(3px);
+
 
     &:focus {
       border: convert_rem(2px) solid #f9b43b;
@@ -263,10 +265,13 @@ form {
     font-weight: 500;
     transition: .3s;
 
-
     &:hover {
       color: $orange;
       transition: .3s;
+    }
+
+    &:focus {
+      outline: none;
     }
 
   }

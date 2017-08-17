@@ -57,6 +57,16 @@
     margin-bottom: convert_rem(15px);
     position: relative;
 
+
+    &:hover {
+      color: #f9b43b;
+
+      &:before {
+        border-top-color: #f9b43b;
+
+      }
+    }
+
     @include media_768 {
       font-size: convert_rem(25px);
     }
@@ -109,6 +119,7 @@
     .team-accordeon__link {
       transition: 0.8s;
       color: #f9b43b;
+
       &:before {
         bottom: convert_rem(6px);
         transform: rotate(180deg);

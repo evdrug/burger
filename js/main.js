@@ -316,37 +316,51 @@ $(document).ready(function () {
         modal = $('.modal-overlay'),
         modalText = $('.modal__text');
 
-    item.on('click', function (e) {
-        e.preventDefault();
-
-        var itemName = $(e.target).siblings('.reviews-item__name').text(),
-            itemComment = $(e.target).siblings('.reviews-item__comment').text();
-
-        modal.css({"opacity": "1", "transition": ".5s", "transform": "scale(1)"});
-        var text = '<div class="modal__name">' + itemName + '</div><div class="modal__comment">' + itemComment + '</div>';
+    function openModal(modal,e,text) {
+        modal.css('display','block');
+        setTimeout(function () {
+            modal.css({
+                "background-color": "rgba(0,0,0,0.9)",
+                "transition": ".5s"
+            });
+        }, 1);
 
         modalText.html(text);
 
         var heightModal = $('.modal__text').height(),
-            heightModalFull = (+heightModal + 20) + 'px';
+            heightModalFull = (+heightModal + 40) + 'px';
         $('.modal').css('height', heightModalFull);
+
+        modal.find('.modal').css({"opacity": "1","transition-delay": ".5s", "transition": "1.5s"});
         flag = false;
+    }
+
+
+    item.on('click', function (e) {
+        e.preventDefault();
+
+        var itemName = $(e.target).siblings('.reviews-item__name').text(),
+            itemComment = $(e.target).siblings('.reviews-item__comment').text(),
+            text = '<div class="modal__name">' + itemName + '</div><div class="modal__comment">' + itemComment + '</div>';
+
+        openModal(modal,e,text);
+
 
     });
 
     var modalClose = $('.modal__close');
 
     modalClose.on('click', function () {
-        modal.css({"opacity": "0", "transition": ".5s", "transform": "scale(0)"});
+        modal.css({"background-color": "rgba(0,0,0,0.0)", "transition": ".5s"});
+        modal.find('.modal').css({"opacity": "0", "transition": "1.5s"});
+        setTimeout(function () {
+            modal.css('display', 'none');
+
+        }, 200);
         flag = true;
     });
 
 
-    // fullpage
-    //
-    // $('.mycontent').onepage_scroll({
-    //     loop: false
-    // })
 
 
     function ajaxForm (form){
@@ -368,15 +382,11 @@ $(document).ready(function () {
             request = ajaxForm(form);
 
             request.done(function (e) {
-                modal.css({"opacity": "1", "transition": ".5s", "transform": "scale(1)"});
-                modalText.html(e.message);
-                var heightModal = $('.modal__text').height(),
-                    heightModalFull = (+heightModal + 40) + 'px';
-                $('.modal').css('height', heightModalFull);
+                openModal(modal,e,e.message);
+                $('#order_form')[0].reset();
+            });
 
-            })
-
-    })
+    });
 
 
 });

@@ -1404,6 +1404,10 @@ non_scrole {
     transition: 0.8s;
     margin-bottom: 0.9375rem;
     position: relative; }
+    .team-accordeon__link:hover {
+      color: #f9b43b; }
+      .team-accordeon__link:hover:before {
+        border-top-color: #f9b43b; }
     @media (max-width: 768px) {
       .team-accordeon__link {
         font-size: 1.5625rem; } }
@@ -1999,6 +2003,8 @@ form {
       color: #f9b43b;
       -webkit-transition: .3s;
       transition: .3s; }
+    .order-form__btn-res:focus {
+      outline: none; }
 
 .box-maps {
   background-position: center;
@@ -2172,20 +2178,17 @@ form {
   cursor: default; }
 
 .modal-overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.85);
-  opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  background-color: transparent;
   z-index: 90; }
 
 .modal {
+  opacity: 0;
   position: absolute;
   display: inline-block;
   width: 50%;
