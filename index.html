@@ -731,29 +731,29 @@
 
                 <div class="box-order__title">Закажите Доставку</div>
                 <div class="box-order__form">
-                    <form action="">
+                    <form action="http://84.52.92.222/burger/mail.php" method="post" id="order_form">
                         <div class="order-form">
                             <div class="form-left">
                                 <div class="input-row">
                                     <label class="input-form" for="input-name">
                                         <div class="input-form__text">Имя</div>
-                                        <input class="input-form__input" type="text" id="input-name" name="name">
+                                        <input class="input-form__input" type="text" id="input-name" name="name" required>
                                     </label>
                                     <label class="input-form" for="input-phone">
                                         <div class="input-form__text">Телефон</div>
-                                        <input class="input-form__input" type="text" id="input-phone" name="phone">
+                                        <input class="input-form__input" type="tel" id="input-phone" name="phone" required>
                                     </label>
                                 </div>
                                 <div class="input-row">
                                     <label class="input-form" for="input-street">
                                         <div class="input-form__text">Улица</div>
-                                        <input class="input-form__input" type="text" id="input-street" name="street">
+                                        <input class="input-form__input" type="text" id="input-street" name="street" required>
                                     </label>
                                 </div>
                                 <div class="input-row">
                                     <label class="input-form" for="input-house">
                                         <div class="input-form__text">Дом</div>
-                                        <input class="input-form__input" type="text" id="input-house" name="house">
+                                        <input class="input-form__input" type="text" id="input-house" name="house" required>
                                     </label>
                                     <label class="input-form" for="input-block">
                                         <div class="input-form__text">Корпус</div>
@@ -761,7 +761,7 @@
                                     </label>
                                     <label class="input-form" for="input-room">
                                         <div class="input-form__text">Квартира</div>
-                                        <input class="input-form__input" type="text" id="input-room" name="room">
+                                        <input class="input-form__input" type="text" id="input-room" name="room" required>
                                     </label>
                                     <label class="input-form" for="input-floor">
                                         <div class="input-form__text">Этаж</div>

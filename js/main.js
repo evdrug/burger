@@ -348,4 +348,32 @@ $(document).ready(function () {
     //     loop: false
     // })
 
+
+    function ajaxForm (form){
+        var action = form.attr('action'),
+            data = form.serialize();
+
+        return $.ajax({
+            type: 'POST',
+            url: action,
+            data: data,
+            dataType: 'JSON'
+        });
+    }
+
+    $('#order_form').on('submit', function (e) {
+        e.preventDefault();
+
+        var form = $(e.target),
+            request = ajaxForm(form);
+
+        request.done(function (msg) {
+            alert(msg);
+
+        });
+
+
+    })
+
+
 });
