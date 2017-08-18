@@ -48,16 +48,15 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    @include position_a(6px,6px);
+    @include position_a(16px,16px);
     border: convert_rem(1px) solid #ffffff;
     border-radius: 50%;
+    transform: scale(0);
     transition: 0.3s;
   }
 
   &:hover:after {
-    width: convert_rem(16px);
-    height: convert_rem(16px);
-    transform: translate(convert_rem(-5px), convert_rem(-5px));
+    transform: scale(1);
     transition: 0.3s;
   }
 
