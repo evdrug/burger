@@ -742,7 +742,6 @@
                                     <label class="input-form" for="input-phone">
                                         <div class="input-form__text">Телефон</div>
                                         <input class="input-form__input" type="tel" id="input-phone" name="phone" required>
-                                    </label>
                                 </div>
                                 <div class="input-row">
                                     <label class="input-form" for="input-street">
@@ -753,19 +752,19 @@
                                 <div class="input-row">
                                     <label class="input-form" for="input-house">
                                         <div class="input-form__text">Дом</div>
-                                        <input class="input-form__input" type="number" id="input-house" name="house" required>
+                                        <input class="input-form__input" type="number" id="input-house" name="house" min="0" required>
                                     </label>
                                     <label class="input-form" for="input-block">
                                         <div class="input-form__text">Корпус</div>
-                                        <input class="input-form__input" type="number" id="input-block" name="block">
+                                        <input class="input-form__input" type="number" id="input-block" name="block" min="0">
                                     </label>
                                     <label class="input-form" for="input-room">
                                         <div class="input-form__text">Квартира</div>
-                                        <input class="input-form__input" type="number" id="input-room" name="room" required>
+                                        <input class="input-form__input" type="number" id="input-room" name="room" min="0" required>
                                     </label>
                                     <label class="input-form" for="input-floor">
                                         <div class="input-form__text">Этаж</div>
-                                        <input class="input-form__input" type="number" id="input-floor" name="floor">
+                                        <input class="input-form__input" type="number" id="input-floor"  name="floor">
                                     </label>
                                 </div>
                             </div>
@@ -900,8 +899,8 @@
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script src="./js/device.js"></script>
 <script src="./js/jquery.mousewheel.min.js"></script>
-<!--<script src="./js/jquery.onepage-scroll.min.js"></script>-->
 <script src="./js/jquery.touchSwipe.min.js"></script>
+<script src="./js/jquery.maskedinput.min.js"></script>
 <script src="./js/main.js"></script>
 </body>
 </html>
