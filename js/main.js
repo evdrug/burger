@@ -49,7 +49,9 @@ function init() {
     });
 
 
+    myMap.behaviors.disable('scrollZoom');
     myMap.geoObjects.add(myPlacemark).add(myPlacemark2).add(myPlacemark3);
+
 }
 
 
